@@ -16,7 +16,7 @@ export const Form = styled.div`
 
   & *,
   & * * {
-    background-color: white;
+    background-color: grey;
   }
 
   & div:hover,

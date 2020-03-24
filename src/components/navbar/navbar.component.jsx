@@ -12,9 +12,10 @@ const Navbar = ({ toggleQuestions }) => (
   <div className="navbar" id="navbar">
     <span>Select a section:</span>
     <div
-      onClick={() =>
-        toggleQuestions(HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS)
-      }
+      onClick={() => {
+        toggleQuestions(HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS);
+        document.getElementById("navbar").style.opacity = 0;
+      }}
     >
       <span>JavaScript</span>
     </div>

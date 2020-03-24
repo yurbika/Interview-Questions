@@ -13,7 +13,7 @@ const homeReducer = (state = INITIAL_STATE, action) => {
     case HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS:
       return {
         ...state,
-        javaScriptQuestions: !state.javaScriptQuestionsVisible
+        javaScriptQuestionsVisible: !state.javaScriptQuestionsVisible
       };
     case HomeActionTypes.TOGGLE_HTML_QUESTIONS:
       return { ...state, htmlQuestionsVisible: !state.htmlQuestionsVisible };
