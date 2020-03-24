@@ -1,17 +1,21 @@
 .navbar {
+  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 50px;
-  height: 350px;
+  width: 100%;
+  height: auto;
   transition: all 0.5s ease-in;
 
-  & > * {
+  .navbar-content {
     display: inline-block;
+  }
+
+  .navbar-content > * {
+    width: 100%;
     padding: 5px 15px;
     margin-bottom: 15px;
-    width: 100%;
     border: 1px solid transparent;
     text-align: center;
     &:first-child {
