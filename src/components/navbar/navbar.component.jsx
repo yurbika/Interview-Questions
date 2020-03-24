@@ -1,15 +1,21 @@
 import React from "react";
+import { connect } from "react-redux";
 
+//redux
+import toggleQuestions from "../../redux/home/home.action";
+import HomeActionTypes from "../../redux/home/home.types";
+
+//styles
 import "./navbar.styles.scss";
 
-const Navbar = () => (
-  <div
-    className="navbar"
-    id="navbar"
-    onClick={e => console.log(e.target.textContent)}
-  >
+const Navbar = ({ toggleQuestions }) => (
+  <div className="navbar" id="navbar">
     <span>Select a section:</span>
-    <div>
+    <div
+      onClick={() =>
+        toggleQuestions(HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS)
+      }
+    >
       <span>JavaScript</span>
     </div>
     <div>
@@ -27,4 +33,8 @@ const Navbar = () => (
   </div>
 );
 
-export default Navbar;
+const mapDispatchToPrps = dispatch => ({
+  toggleQuestions: type => dispatch(toggleQuestions(type))
+});
+
+export default connect(null, mapDispatchToPrps)(Navbar);
