@@ -4,6 +4,7 @@ import "./navbar.styles.scss";
 
 const Navbar = () => (
   <div className="navbar">
+    <span>Select a section:</span>
     <div>
       <span>JavaScript</span>
     </div>
