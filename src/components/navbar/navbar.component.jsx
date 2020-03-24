@@ -3,7 +3,11 @@ import React from "react";
 import "./navbar.styles.scss";
 
 const Navbar = () => (
-  <div className="navbar">
+  <div
+    className="navbar"
+    id="navbar"
+    onClick={e => console.log(e.target.textContent)}
+  >
     <span>Select a section:</span>
     <div>
       <span>JavaScript</span>

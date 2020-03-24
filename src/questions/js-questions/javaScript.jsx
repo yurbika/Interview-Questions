@@ -6,15 +6,18 @@ const JavaScriptQuestions = {
   1: {
     question: "What is event delagation?",
     answer:
-      "JS event listeners fire not only on a single DOM element but on all its descendants",
+      "JavaScript event listeners fires not only on a single DOM element but on all its descendants",
     example: (
-      <Form onClick={() => alert(`EventListener attached on form only`)}>
-        Form
-        <div>
-          Div
-          <pre>P</pre>
-        </div>
-      </Form>
+      <div>
+        <span>Try it, click on something:</span>
+        <Form onClick={() => alert(`EventListener attached on form only`)}>
+          Form
+          <div>
+            Div
+            <pre>P</pre>
+          </div>
+        </Form>
+      </div>
     )
   },
   2: {
