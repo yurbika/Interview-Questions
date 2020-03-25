@@ -2,7 +2,7 @@ import HomeActionTypes from "../../redux/home/home.types";
 
 //question list
 import JavaScriptQuestions from "../../questions/js-questions/javaScript";
-import { setLengthOfQuestions } from "../../redux/quester/quester.action";
+import { setQuestionsOrder } from "../../redux/quester/quester.action";
 
 export const questionDecider = type => {
   switch (type) {
@@ -18,7 +18,7 @@ export const randomIntFromInterval = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
 
-export const createArrayOfNumbers = (start, end) => {
+const createArrayOfNumbers = (end, start = 1) => {
   let array = [];
   for (let i = start; i <= end; i++) {
     array.push(i);
@@ -26,9 +26,19 @@ export const createArrayOfNumbers = (start, end) => {
   return array;
 };
 
-export const randomQuestGenerator = array => {
-  let randomIndex = randomIntFromInterval(0, array.lenght - 1);
-  array = array.splice(randomIndex, 1);
-  setLengthOfQuestions(array);
-  return 1;
+export const createRandomOrderOfNumbers = length => {
+  let i = 0;
+  let arrayWithRandomNumbers = [];
+  let array = createArrayOfNumbers(length);
+  let arrayLength = array.length;
+
+  while (i < arrayLength) {
+    console.log(i);
+    let randomIndex = randomIntFromInterval(0, array.length - 1);
+    arrayWithRandomNumbers.push(array[randomIndex]);
+    array.splice(randomIndex, 1);
+    i++;
+  }
+  console.log(arrayWithRandomNumbers);
+  return arrayWithRandomNumbers;
 };
