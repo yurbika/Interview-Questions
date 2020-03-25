@@ -5,7 +5,8 @@ const INITIAL_STATE = {
   htmlQuestionsVisible: false,
   cssQuestionsVisible: false,
   reactQuestionsVisible: false,
-  reduxQuestionsVisible: false
+  reduxQuestionsVisible: false,
+  solutionVisible: false
 };
 
 const homeReducer = (state = INITIAL_STATE, action) => {
@@ -15,8 +16,8 @@ const homeReducer = (state = INITIAL_STATE, action) => {
         ...state,
         javaScriptQuestionsVisible: !state.javaScriptQuestionsVisible
       };
-    case HomeActionTypes.TOGGLE_HTML_QUESTIONS:
-      return { ...state, htmlQuestionsVisible: !state.htmlQuestionsVisible };
+    case HomeActionTypes.TOGGLE_SOLUTION:
+      return { ...state, solutionVisible: !state.solutionVisible };
     default:
       return state;
   }

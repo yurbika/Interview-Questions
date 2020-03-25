@@ -2,7 +2,7 @@ import QuesterActionTypes from "./quester.types";
 
 const INITIAL_STATE = {
   questionFile: null,
-  listOfAskedQuestionsWithAnswers: { 2: "asdfasdf", 1: "df", 0: "<" },
+  listOfAskedQuestionsWithAnswers: {},
   questionsOrder: [],
   index: 0,
   currInputText: ""
