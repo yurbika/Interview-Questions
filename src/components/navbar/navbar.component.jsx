@@ -5,15 +5,19 @@ import { connect } from "react-redux";
 import toggleQuestions from "../../redux/home/home.action";
 import HomeActionTypes from "../../redux/home/home.types";
 
-import { setQuestionFile } from "../../redux/quester/quester.action";
+import {
+  setQuestionFile,
+  setQuestionsOrder
+} from "../../redux/quester/quester.action";
 
 //styles
 import "./navbar.styles.scss";
 
 //utils
 import JavaScriptQuestions from "../../questions/js-questions/javaScript";
+import { createRandomOrderOfNumbers } from "../../components/quester/quester.utils";
 
-const Navbar = ({ toggleQuestions, setQuestionFile }) => (
+const Navbar = ({ toggleQuestions, setQuestionFile, setQuestionsOrder }) => (
   <div className="navbar" id="navbar">
     <h4>Select a section:</h4>
     <ul>
@@ -23,6 +27,9 @@ const Navbar = ({ toggleQuestions, setQuestionFile }) => (
           document.getElementById("navbar").style.opacity = 0;
           document.getElementById("navbar").style.pointerEvents = "none";
           setQuestionFile(JavaScriptQuestions);
+          setQuestionsOrder(
+            createRandomOrderOfNumbers(Object.keys(JavaScriptQuestions).length)
+          );
         }}
       >
         JavaScript
@@ -37,7 +44,8 @@ const Navbar = ({ toggleQuestions, setQuestionFile }) => (
 
 const mapDispatchToPrps = dispatch => ({
   toggleQuestions: type => dispatch(toggleQuestions(type)),
-  setQuestionFile: file => dispatch(setQuestionFile(file))
+  setQuestionFile: file => dispatch(setQuestionFile(file)),
+  setQuestionsOrder: array => dispatch(setQuestionsOrder(array))
 });
 
 export default connect(null, mapDispatchToPrps)(Navbar);
