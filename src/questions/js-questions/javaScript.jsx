@@ -2,8 +2,8 @@ import React from "react";
 
 import { Form } from "./javaScript.styles";
 
-const JavaScriptQuestions = {
-  1: {
+const JavaScriptQuestions = [
+  {
     question: "What is event delagation?",
     answer:
       "JavaScript event listeners fires not only on a single DOM element but on all its descendants",
@@ -20,12 +20,12 @@ const JavaScriptQuestions = {
       </div>
     )
   },
-  2: {
+  {
     question: "What is event bubbling?",
     answer:
       "Inverse of delegation, also know as Propogations. Events on an element will bubble up and also fire on all parents"
   },
-  3: {
+  {
     question: "What is the difference between target and currentTarget",
     answer: (
       <div>
@@ -34,6 +34,6 @@ const JavaScriptQuestions = {
       </div>
     )
   }
-};
+];
 
 export default JavaScriptQuestions;

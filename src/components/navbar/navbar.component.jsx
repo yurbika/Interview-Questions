@@ -28,7 +28,7 @@ const Navbar = ({ toggleQuestions, setQuestionFile, setQuestionsOrder }) => (
           document.getElementById("navbar").style.pointerEvents = "none";
           setQuestionFile(JavaScriptQuestions);
           setQuestionsOrder(
-            createRandomOrderOfNumbers(Object.keys(JavaScriptQuestions).length)
+            createRandomOrderOfNumbers(JavaScriptQuestions.length - 1)
           );
         }}
       >
