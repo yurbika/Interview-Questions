@@ -5,16 +5,20 @@ import { createStructuredSelector } from "reselect";
 //components
 import Navbar from "../../components/navbar/navbar.component";
 import Quester from "../../components/quester/quester.component";
+import Solution from "../../components/solution/solution.component";
 
 //redux
-import { selectJavaScript } from "../../redux/home/home.selectors";
+import {
+  selectJavaScript,
+  selectSolution
+} from "../../redux/home/home.selectors";
 
 //styles
 import "./home.styles.scss";
 
 class Home extends React.Component {
   render() {
-    const { jsVisible } = this.props;
+    const { jsVisible, solutionVisible } = this.props;
 
     //for more var
     let show = false;
@@ -22,17 +26,21 @@ class Home extends React.Component {
 
     return (
       <div className="container">
-        <div className="content-container">
-          <Navbar />
-          {show ? <Quester /> : null}
-        </div>
+        {!solutionVisible ? (
+          <div className="content-container">
+            <Navbar />
+            {show ? <Quester /> : null}
+          </div>
+        ) : null}
+        {solutionVisible ? <Solution /> : null}
       </div>
     );
   }
 }
 
 const mapStateToProps = createStructuredSelector({
-  jsVisible: selectJavaScript
+  jsVisible: selectJavaScript,
+  solutionVisible: selectSolution
 });
 
 export default connect(mapStateToProps)(Home);

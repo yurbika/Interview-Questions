@@ -2,8 +2,9 @@ import styled from "styled-components";
 
 //Question number:1
 export const Form = styled.div`
-  max-width: 180px;
+  max-width: 200px;
   margin-top: 15px;
+  text-align: center;
   &,
   & * {
     border: 1px solid blue;

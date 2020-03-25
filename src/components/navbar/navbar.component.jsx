@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 //redux
-import toggleQuestions from "../../redux/home/home.action";
+import toggle from "../../redux/home/home.action";
 import HomeActionTypes from "../../redux/home/home.types";
 
 import {
@@ -17,13 +17,13 @@ import "./navbar.styles.scss";
 import JavaScriptQuestions from "../../questions/js-questions/javaScript";
 import { createRandomOrderOfNumbers } from "../../components/quester/quester.utils";
 
-const Navbar = ({ toggleQuestions, setQuestionFile, setQuestionsOrder }) => (
+const Navbar = ({ toggle, setQuestionFile, setQuestionsOrder }) => (
   <div className="navbar" id="navbar">
     <h4>Select a section:</h4>
     <ul>
       <li
         onClick={() => {
-          toggleQuestions(HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS);
+          toggle(HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS);
           document.getElementById("navbar").style.opacity = 0;
           document.getElementById("navbar").style.pointerEvents = "none";
           setQuestionFile(JavaScriptQuestions);
@@ -43,7 +43,7 @@ const Navbar = ({ toggleQuestions, setQuestionFile, setQuestionsOrder }) => (
 );
 
 const mapDispatchToPrps = dispatch => ({
-  toggleQuestions: type => dispatch(toggleQuestions(type)),
+  toggle: type => dispatch(toggle(type)),
   setQuestionFile: file => dispatch(setQuestionFile(file)),
   setQuestionsOrder: array => dispatch(setQuestionsOrder(array))
 });

@@ -1,3 +1,11 @@
 .question-container {
-  transition: all 0.35s ease-in;
+  display: flex;
+  flex-direction: column;
+
+  textarea {
+    resize: none;
+    height: 150px;
+    width: 100%;
+    outline: none;
+  }
 }
