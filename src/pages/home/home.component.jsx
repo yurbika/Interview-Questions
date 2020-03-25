@@ -13,6 +13,7 @@ class Home extends React.Component {
       <div className="container">
         <div className="content-container">
           <Navbar />
+          <Quester />
         </div>
       </div>
     );

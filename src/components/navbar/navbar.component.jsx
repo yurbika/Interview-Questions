@@ -15,31 +15,23 @@ import JavaScriptQuestions from "../../questions/js-questions/javaScript";
 
 const Navbar = ({ toggleQuestions, setQuestionFile }) => (
   <div className="navbar" id="navbar">
-    <div className="navbar-content">
-      {/*transform in a ul and change styles */}
-      <span>Select a section:</span>
-      <div
+    <h4>Select a section:</h4>
+    <ul>
+      <li
         onClick={() => {
           toggleQuestions(HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS);
           document.getElementById("navbar").style.opacity = 0;
+          document.getElementById("navbar").style.pointerEvents = "none";
           setQuestionFile(JavaScriptQuestions);
         }}
       >
-        <span>JavaScript</span>
-      </div>
-      <div>
-        <span>CSS</span>
-      </div>
-      <div>
-        <span>HTML</span>
-      </div>
-      <div>
-        <span>React</span>
-      </div>
-      <div>
-        <span>Redux</span>
-      </div>
-    </div>
+        JavaScript
+      </li>
+      <li>CSS</li>
+      <li>HTML</li>
+      <li>React</li>
+      <li>Redux</li>
+    </ul>
   </div>
 );
 

@@ -3,7 +3,8 @@ import QuesterActionTypes from "./quester.types";
 const INITIAL_STATE = {
   questionFile: null,
   listOfAskedQuestionsWithAnswers: null,
-  index: 0
+  lengthOfQuestions: [],
+  index: null
 };
 
 const questerReducer = (state = INITIAL_STATE, action) => {
@@ -14,6 +15,11 @@ const questerReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         listOfAskedQuestionsWithAnswers: action.payload
+      };
+    case QuesterActionTypes.SET_LENGTH_OF_QUESTIONS:
+      return {
+        ...state,
+        lengthOfQuestions: action.payload
       };
     default:
       return state;

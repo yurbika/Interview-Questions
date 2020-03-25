@@ -11,3 +11,8 @@ export const selectList = createSelector(
   [selectQuester],
   quester => quester.listOfAskedQuestionsWithAnswers
 );
+
+export const selectLengthOfQuestions = createSelector(
+  [selectQuester],
+  quester => quester.lengthOfQuestions
+);
