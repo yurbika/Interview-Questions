@@ -19,3 +19,12 @@ export const setIndex = num => ({
   type: QuesterActionTypes.SET_INDEX,
   payload: num
 });
+
+export const setInput = text => ({
+  type: QuesterActionTypes.SET_INPUT,
+  payload: text
+});
+
+export const clearInput = () => ({
+  type: QuesterActionTypes.CLEAR_INPUT
+});

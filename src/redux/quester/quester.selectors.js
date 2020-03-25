@@ -21,3 +21,8 @@ export const selectIndex = createSelector(
   [selectQuester],
   quester => quester.index
 );
+
+export const selectInput = createSelector(
+  [selectQuester],
+  quester => quester.currInputText
+);

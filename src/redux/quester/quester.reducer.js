@@ -5,7 +5,7 @@ const INITIAL_STATE = {
   listOfAskedQuestionsWithAnswers: null,
   questionsOrder: [],
   index: 0,
-  currInputText: null
+  currInputText: ""
 };
 
 const questerReducer = (state = INITIAL_STATE, action) => {
@@ -26,6 +26,16 @@ const questerReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         index: action.payload
+      };
+    case QuesterActionTypes.SET_INPUT:
+      return {
+        ...state,
+        currInputText: action.payload
+      };
+    case QuesterActionTypes.CLEAR_INPUT:
+      return {
+        ...state,
+        currInputText: ""
       };
     default:
       return state;

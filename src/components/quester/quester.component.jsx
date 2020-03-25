@@ -6,12 +6,15 @@ import { createStructuredSelector } from "reselect";
 import {
   selectQuestionFile,
   selectQuestionsOrder,
-  selectIndex
+  selectIndex,
+  selectInput
 } from "../../redux/quester/quester.selectors";
 
 import {
   setQuestionsOrder,
-  setIndex
+  setIndex,
+  setInput,
+  clearInput
 } from "../../redux/quester/quester.action";
 
 //styles
@@ -26,14 +29,29 @@ import "./quester.styles.scss";
 /*needs */
 //which questions should be asked
 
-const Quester = ({ questions, array, index, setIndex }) => {
+const Quester = ({
+  questions,
+  array,
+  index,
+  setIndex,
+  input,
+  setInput,
+  clearInput
+}) => {
   return (
     <div className="question-container">
       <div className="question">{questions[array[0 + index]]["question"]}</div>
-      <input className="input"></input>
+      <input
+        className="input"
+        value={input}
+        onChange={e => setInput(e.target.value)}
+      />
       <button
         onClick={() => {
-          if (index < array.length - 1) setIndex(++index);
+          if (index < array.length - 1) {
+            setIndex(++index);
+            clearInput();
+          }
           //save answers and corresponding id
         }}
       >
@@ -46,12 +64,15 @@ const Quester = ({ questions, array, index, setIndex }) => {
 const mapStateToProps = createStructuredSelector({
   questions: selectQuestionFile,
   array: selectQuestionsOrder,
-  index: selectIndex
+  index: selectIndex,
+  input: selectInput
 });
 
 const mapDispatchToProps = dispatch => ({
   setQuestionsOrder: array => dispatch(setQuestionsOrder(array)),
-  setIndex: num => dispatch(setIndex(num))
+  setIndex: num => dispatch(setIndex(num)),
+  setInput: str => dispatch(setInput(str)),
+  clearInput: () => dispatch(clearInput())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quester);
