@@ -10,7 +10,12 @@ export const setList = object => ({
   payload: object
 });
 
-export const setLengthOfQuestions = array => ({
-  type: QuesterActionTypes.SET_LENGTH_OF_QUESTIONS,
+export const setQuestionsOrder = array => ({
+  type: QuesterActionTypes.SET_QUESTIONS_ORDER,
   payload: array
+});
+
+export const setIndex = num => ({
+  type: QuesterActionTypes.SET_INDEX,
+  payload: num
 });

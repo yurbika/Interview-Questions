@@ -12,7 +12,12 @@ export const selectList = createSelector(
   quester => quester.listOfAskedQuestionsWithAnswers
 );
 
-export const selectLengthOfQuestions = createSelector(
+export const selectQuestionsOrder = createSelector(
   [selectQuester],
-  quester => quester.lengthOfQuestions
+  quester => quester.questionsOrder
+);
+
+export const selectIndex = createSelector(
+  [selectQuester],
+  quester => quester.index
 );
