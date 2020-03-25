@@ -2,7 +2,7 @@ import QuesterActionTypes from "./quester.types";
 
 const INITIAL_STATE = {
   questionFile: null,
-  listOfAskedQuestionsWithAnswers: [],
+  listOfAskedQuestionsWithAnswers: { 2: "asdfasdf", 1: "df", 0: "<" },
   questionsOrder: [],
   index: 0,
   currInputText: ""
@@ -15,10 +15,10 @@ const questerReducer = (state = INITIAL_STATE, action) => {
     case QuesterActionTypes.SET_LIST_OF_ASKED_QUESTIONS:
       return {
         ...state,
-        listOfAskedQuestionsWithAnswers: [
-          action.payload,
-          ...state.listOfAskedQuestionsWithAnswers
-        ]
+        listOfAskedQuestionsWithAnswers: Object.assign(
+          state.listOfAskedQuestionsWithAnswers,
+          action.payload
+        )
       };
     case QuesterActionTypes.SET_QUESTIONS_ORDER:
       return {
