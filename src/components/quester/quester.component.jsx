@@ -14,7 +14,8 @@ import {
   setQuestionsOrder,
   setIndex,
   setInput,
-  clearInput
+  clearInput,
+  addToList
 } from "../../redux/quester/quester.action";
 
 //styles
@@ -36,11 +37,12 @@ const Quester = ({
   setIndex,
   input,
   setInput,
-  clearInput
+  clearInput,
+  addToList
 }) => {
   return (
     <div className="question-container">
-      <div className="question">{questions[array[0 + index]]["question"]}</div>
+      <div className="question">{questions[array[index]]["question"]}</div>
       <input
         className="input"
         value={input}
@@ -51,8 +53,8 @@ const Quester = ({
           if (index < array.length - 1) {
             setIndex(++index);
             clearInput();
+            addToList({ questionNum: array[index], answer: input });
           }
-          //save answers and corresponding id
         }}
       >
         Next
@@ -72,7 +74,8 @@ const mapDispatchToProps = dispatch => ({
   setQuestionsOrder: array => dispatch(setQuestionsOrder(array)),
   setIndex: num => dispatch(setIndex(num)),
   setInput: str => dispatch(setInput(str)),
-  clearInput: () => dispatch(clearInput())
+  clearInput: () => dispatch(clearInput()),
+  addToList: object => dispatch(addToList(object))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quester);

@@ -5,7 +5,7 @@ export const setQuestionFile = file => ({
   payload: file
 });
 
-export const setList = object => ({
+export const addToList = object => ({
   type: QuesterActionTypes.SET_LIST_OF_ASKED_QUESTIONS,
   payload: object
 });
