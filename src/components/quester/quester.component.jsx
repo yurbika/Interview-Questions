@@ -2,6 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
+//components
+import Button from "../../components/button/button.component";
+
 //redux
 import {
   selectQuestionFile,
@@ -56,7 +59,8 @@ const Quester = ({
           setInput(`${e.target.value}`);
         }}
       />
-      <button
+      <Button
+        cancel
         onClick={() => {
           if (index < array.length - 1) {
             clearInput();
@@ -71,7 +75,7 @@ const Quester = ({
         }}
       >
         {index === array.length - 1 ? "Finish" : "Next"}
-      </button>
+      </Button>
     </div>
   );
 };

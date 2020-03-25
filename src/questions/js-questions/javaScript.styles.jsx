@@ -2,13 +2,16 @@ import styled from "styled-components";
 
 //Question number:1
 export const Form = styled.div`
+  width: inherit;
   max-width: 200px;
-  margin-top: 15px;
+  margin-top: 0;
   text-align: center;
+  padding: 0;
+
   &,
   & * {
     border: 1px solid blue;
-    padding: 10px 30px;
+    padding: 5px 15px;
   }
   &:hover,
   & *:hover {

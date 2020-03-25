@@ -8,15 +8,13 @@ const JavaScriptQuestions = [
     answer:
       "JavaScript event listeners fires not only on a single DOM element but on all its descendants",
     example: (
-      <div>
-        <Form onClick={() => alert(`EventListener attached on form only`)}>
-          Form - Click Me
-          <div>
-            Div - Click Me
-            <p>P - Click Me</p>
-          </div>
-        </Form>
-      </div>
+      <Form onClick={() => alert(`EventListener attached on form only`)}>
+        Form - Click Me
+        <div>
+          Div - Click Me
+          <p>P - Click Me</p>
+        </div>
+      </Form>
     )
   },
   {
@@ -26,13 +24,8 @@ const JavaScriptQuestions = [
   },
   {
     question: "What is the difference between target and currentTarget?",
-    answer: (
-      <span>
-        - target = the element that triggered the event <br></br>
-        <br></br>- currentTarget = the element that the event listener is
-        attached to
-      </span>
-    )
+    answer:
+      "- target = the element that triggered the event \n- currentTarget = the element that the event listener is attached to"
   }
 ];
 

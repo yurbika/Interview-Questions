@@ -12,16 +12,29 @@
   background-color: grey;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
   margin-bottom: 100px;
+  h1 {
+    text-align: center;
+    margin: 0;
+  }
 
   & * {
-    &:first-child {
-      margin-top: 15px;
-    }
-    margin-bottom: 35px;
-    padding: 0 15px;
+    margin-bottom: 15px;
+    padding: 15px;
+  }
+  .solution-content-container {
+    border-bottom: 1px solid #595959;
+    margin: 15px;
+    padding: unset;
   }
   div {
     display: flex;
     flex-direction: column;
+    .solution-content {
+      display: flex;
+      flex-direction: row;
+      & * {
+        margin: unset;
+      }
+    }
   }
 }
