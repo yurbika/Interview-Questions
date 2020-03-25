@@ -13,7 +13,7 @@ export const questionDecider = type => {
   }
 };
 
-export const randomIntFromInterval = (min, max) => {
+const randomInterval = (min, max) => {
   // min and max included
   return Math.floor(Math.random() * (max - min + 1) + min);
 };
@@ -33,12 +33,10 @@ export const createRandomOrderOfNumbers = length => {
   let arrayLength = array.length;
 
   while (i < arrayLength) {
-    console.log(i);
-    let randomIndex = randomIntFromInterval(0, array.length - 1);
+    let randomIndex = randomInterval(0, array.length - 1);
     arrayWithRandomNumbers.push(array[randomIndex]);
     array.splice(randomIndex, 1);
     i++;
   }
-  console.log(arrayWithRandomNumbers);
   return arrayWithRandomNumbers;
 };
