@@ -26,16 +26,7 @@ import toggle from "../../redux/home/home.action";
 import HomeActionTypes from "../../redux/home/home.types";
 
 //styles
-import "./quester.styles.scss";
-
-/*tasks */
-//collects all answers with an id
-//gets new questions
-//beware of which question is already asked
-//depending on buttion click show random question
-
-/*needs */
-//which questions should be asked
+import { Container } from "./quester.styles";
 
 const Quester = ({
   questions,
@@ -51,8 +42,8 @@ const Quester = ({
   toggle
 }) => {
   return (
-    <div className="question-container">
-      <div className="question">{questions[array[index]]["question"]}</div>
+    <Container>
+      <span>{questions[array[index]]["question"]}</span>
       <textarea
         value={input}
         onChange={e => {
@@ -76,7 +67,7 @@ const Quester = ({
       >
         {index === array.length - 1 ? "Finish" : "Next"}
       </Button>
-    </div>
+    </Container>
   );
 };
 

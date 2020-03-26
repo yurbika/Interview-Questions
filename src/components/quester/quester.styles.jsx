@@ -1,4 +1,6 @@
-.question-container {
+import styled from "styled-components";
+
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +10,10 @@
   padding: 15px;
   text-align: center;
 
+  & * {
+    margin-bottom: 15px;
+  }
+
   textarea {
     resize: none;
     height: 150px;
@@ -16,8 +22,4 @@
     border-radius: 15px;
     padding: 15px;
   }
-
-  & * {
-    margin-bottom: 15px;
-  }
-}
+`;
