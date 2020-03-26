@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../../utils/theme";
 
 export const Container = styled.div`
   display: flex;
@@ -21,5 +22,9 @@ export const Container = styled.div`
     outline: none;
     border-radius: 15px;
     padding: 15px;
+    &:focus {
+      transition: border 0.35s ease-in;
+      border: 1px solid ${theme.colors.orange};
+    }
   }
 `;

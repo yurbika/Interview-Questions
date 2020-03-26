@@ -14,7 +14,7 @@ import {
 } from "../../redux/home/home.selectors";
 
 //styles
-import "./home.styles.scss";
+import { Container, Content } from "./home.styles";
 
 class Home extends React.Component {
   render() {
@@ -25,15 +25,15 @@ class Home extends React.Component {
     if (jsVisible) show = true;
 
     return (
-      <div className="container">
+      <Container>
         {!solutionVisible ? (
-          <div className="content-container">
+          <Content>
             <Menu />
             {show ? <Quester /> : null}
-          </div>
+          </Content>
         ) : null}
         {solutionVisible ? <Solution /> : null}
-      </div>
+      </Container>
     );
   }
 }

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import theme from "../../utils/theme";
 
 //Question number:1
 export const Form = styled.div`
@@ -10,26 +11,26 @@ export const Form = styled.div`
 
   &,
   & * {
-    border: 1px solid blue;
+    border: 1px solid ${theme.colors.blue};
     padding: 5px 15px;
   }
   &:hover,
   & *:hover {
-    background-color: #9999df;
+    background-color: ${theme.colors.rgbaBlue};
   }
 
   & *,
   & * * {
-    background-color: grey;
+    background-color: ${theme.colors.grey};
   }
 
   & div:hover,
   & * div:hover {
-    background-color: #9999df;
+    background-color: ${theme.colors.rgbaBlue};
   }
 
   & p:hover,
   & * p:hover {
-    background-color: #9999df;
+    background-color: ${theme.colors.rgbaBlue};
   }
 `;
