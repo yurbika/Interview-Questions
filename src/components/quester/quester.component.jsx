@@ -2,9 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
-//components
-import Button from "../../components/button/button.component";
-
 //redux
 import {
   selectQuestionFile,
@@ -21,9 +18,8 @@ import {
   addToList
 } from "../../redux/quester/quester.action";
 
-import { selectJavaScript } from "../../redux/home/home.selectors";
+import { selectQuestions } from "../../redux/home/home.selectors";
 import toggle from "../../redux/home/home.action";
-import HomeActionTypes from "../../redux/home/home.types";
 
 //styles
 import { Container } from "./quester.styles";
@@ -38,7 +34,7 @@ const Quester = ({
   clearInput,
   addToList,
   //home redux
-  jsVisible,
+  questionsVisible,
   toggle
 }) => {
   return (
@@ -59,7 +55,7 @@ const mapStateToProps = createStructuredSelector({
   array: selectQuestionsOrder,
   index: selectIndex,
   input: selectInput,
-  jsVisible: selectJavaScript
+  questionsVisible: selectQuestions
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -23,7 +23,7 @@ import {
 } from "../../redux/quester/quester.action";
 
 import {
-  selectJavaScript,
+  selectQuestions,
   selectSolution
 } from "../../redux/home/home.selectors";
 import toggle from "../../redux/home/home.action";
@@ -98,7 +98,7 @@ const mapStateToProps = createStructuredSelector({
   array: selectQuestionsOrder,
   index: selectIndex,
   input: selectInput,
-  jsVisible: selectJavaScript,
+  selectQuestions: selectQuestions,
   solutionVisible: selectSolution
 });
 

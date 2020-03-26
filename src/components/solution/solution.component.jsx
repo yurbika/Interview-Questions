@@ -13,11 +13,13 @@ import KEY_GENERATOR from "../../utils/uniqueKey";
 //styles
 import { Container, Item, ItemWrapper } from "./solution.styles";
 
+import JavaScriptQuestions from "../../questions/js-questions/javaScript";
+
 const Solution = ({ questions, userAnswers }) => {
   return (
     <Container>
       <h1>Solution</h1>
-      {questions.map((item, index) => (
+      {JavaScriptQuestions.map((item, index) => (
         <ItemWrapper key={KEY_GENERATOR("Solution-Container-")}>
           <Item>
             <span>Q.: </span>
@@ -33,7 +35,7 @@ const Solution = ({ questions, userAnswers }) => {
           </Item>
           {!!item["example"] ? (
             <Item>
-              <span>E.:</span> <span>{item["example"]}</span>
+              <span>E.:</span> <pre>{item["example"]}</pre>
             </Item>
           ) : null}
         </ItemWrapper>
