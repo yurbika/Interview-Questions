@@ -11,21 +11,21 @@ import {
 } from "../../redux/quester/quester.action";
 
 //styles
-import "./menu.styles.scss";
+import { MenuContainer } from "./menu.styles";
 
 //utils
 import JavaScriptQuestions from "../../questions/js-questions/javaScript";
 import { createRandomOrderOfNumbers } from "../quester/quester.utils";
 
 const Menu = ({ toggle, setQuestionFile, setQuestionsOrder }) => (
-  <div className="navbar" id="navbar">
+  <MenuContainer id="menu">
     <h4>Select a section:</h4>
     <ul>
       <li
         onClick={() => {
           toggle(HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS);
-          document.getElementById("navbar").style.opacity = 0;
-          document.getElementById("navbar").style.pointerEvents = "none";
+          document.getElementById("menu").style.opacity = 0;
+          document.getElementById("menu").style.pointerEvents = "none";
           setQuestionFile(JavaScriptQuestions);
           setQuestionsOrder(
             createRandomOrderOfNumbers(JavaScriptQuestions.length - 1)
@@ -39,7 +39,7 @@ const Menu = ({ toggle, setQuestionFile, setQuestionsOrder }) => (
       <li>React</li>
       <li>Redux</li>
     </ul>
-  </div>
+  </MenuContainer>
 );
 
 const mapDispatchToPrps = dispatch => ({
