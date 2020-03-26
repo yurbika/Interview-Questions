@@ -248,8 +248,234 @@ The main difference between .forEach and .map() is that .map() returns a new arr
   {
     question: "What's the difference between an attribute and a property?",
     answer: `- Attributes are defined on the HTML markup but properties are defined on the DOM.
-    
+
   - So if you want to know what's currently inside the text-box, read the property. If you, however, want to know what the initial value of the text-box was, read the attribute.`
+  },
+  {
+    question: "Why is extending built-in JavaScript objects not a good idea?",
+    answer: `- i.e. because two methods trying to overwrite each other and if the behaviors are not the same, so it breaks
+    
+- The only time you may want to extend a native object is when you want to create a polyfill, essentially providing your own implementation for a method that is part of the JavaScript specification but might not exist in the user's browser due to it being an older browser.`
+  },
+  {
+    question: "Explain the same-origin policy with regards to JavaScript.",
+    answer: `- The same-origin policy prevents JavaScript from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port number. This policy prevents a malicious script on one page from obtaining access to sensitive data on another web page through that page's Document Object Model.`
+  },
+  {
+    question: "What tools and techniques do you use for debugging JavaScript?",
+    answer: `- ChromeDevTools
+
+- Good old console.log debugging`
+  },
+  {
+    question:
+      "Explain the difference between synchronous and asynchronous functions",
+    answer: `- Synchronous functions are blocking while asynchronous functions are not. In synchronous functions, statements complete before the next statement is run.
+    
+ - Asynchronous functions usually accept a callback as a parameter and execution continue on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty.`
+  },
+  {
+    question:
+      "What is event loop? What is the difference between call stack and task queue?",
+    answer:
+      "The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue. If the call stack is empty and there are callback functions in the task queue, a function is dequeued and pushed onto the call stack to be executed."
+  },
+  {
+    question:
+      "What are the differences between variables created using let, var or const?",
+    answer:
+      "- Variables declared using the var keyword are scoped to the function in which they are created, or if created outside of any function, to the global object. let and const are block scoped, meaning they are only accessible within the nearest set of curly braces (function, if-else block, or for-loop)."
+  },
+  {
+    question:
+      "Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions?",
+    answer:
+      "- One obvious benefit of arrow functions is to simplify the syntax needed to create functions, without a need for the function keyword. The this within arrow functions is also bound to the enclosing scope which is different compared to regular functions where the this is determined by the object calling it. Lexically-scoped this is useful when invoking callbacks especially in React components."
+  },
+  {
+    question:
+      "What advantages offers the arrow syntax for a method in a constructor?",
+    answer:
+      "- The main advantage of using an arrow function as a method inside a constructor is that the value of this gets set at the time of the function creation and can't change after that. So, when the constructor is used to create a new object, this will always refer to that object.",
+    example: `const Person = function(firstName) {
+  this.firstName = firstName;
+  this.sayName1 = function() { console.log(this.firstName); };
+  this.sayName2 = () => { console.log(this.firstName); };
+};
+
+const john = new Person('John');
+const dave = new Person('Dave');
+
+john.sayName1(); // John
+john.sayName2(); // John
+
+// The regular function can change the value, but the arrow function cannot
+john.sayName1.call(dave); // Dave (because "this" is now the dave object)
+john.sayName2.call(dave); // John
+
+john.sayName1.apply(dave); // Dave (because 'this' is now the dave object)
+john.sayName2.apply(dave); // John
+
+john.sayName1.bind(dave)(); // Dave (because 'this' is now the dave object)
+john.sayName2.bind(dave)(); // John
+
+var sayNameFromWindow1 = john.sayName1;
+sayNameFromWindow1(); // undefined (because 'this' is now the window object)
+
+var sayNameFromWindow2 = john.sayName2;
+sayNameFromWindow2(); // John`
+  },
+  {
+    question:
+      "Can you give an example for destructuring an object or an array?",
+    answer:
+      "- Destructuring is an expression available in ES6 which enables a succinct and convenient way to extract values of Objects or Arrays and place them into distinct variables.",
+    example: ` Array destructuring
+
+  // Variable assignment.
+  const foo = ['one', 'two', 'three'];
+
+  const [one, two, three] = foo;
+  console.log(one); // "one"
+  console.log(two); // "two"
+  console.log(three); // "three"
+
+  // Swapping variables
+  let a = 1;
+  let b = 3;
+
+  [a, b] = [b, a];
+  console.log(a); // 3
+  console.log(b); // 1
+
+  Object destructuring
+
+  // Variable assignment.
+  const o = { p: 42, q: true };
+  const { p, q } = o;
+
+  console.log(p); // 42
+  console.log(q); // true`
+  },
+  {
+    question:
+      "ES6 Template Literals offer a lot of flexibility in generating strings, can you give an example?",
+    answer:
+      `          const person = { name: 'Tyler', age: 28 };
+          console.log(` +
+      "Hi, my name is ${person.name} and I am ${person.age} years old!" +
+      `);
+          // 'Hi, my name is Tyler and I am 28 years old!'
+
+          console.log(` +
+      "This is line one." +
+      +"This is line two." +
+      `);
+          // This is line one.
+          // This is line two.
+
+          const person = { name: 'Tyler', age: 28 };
+          document.body.innerHTML = ` +
+      "div" +
+      `
+
+        p Name:` +
+      "${person.name}" +
+      ` /p
+        p Name:` +
+      "${person.age}" +
+      ` /p
+
+      /div `
+  },
+  {
+    question:
+      "Can you give an example of a curry function and why this syntax offers an advantage?",
+    answer:
+      "- Currying is a pattern where a function with more than one parameter is broken into multiple functions that, when called in series, will accumulate all of the required parameters one at a time. This technique can be useful for makinwritten in a functional style easier to read and compose. It's important to note that for a function to be curried, it needs to start out as one function, then broken out into a sequence of functions that each accepts one parameter.",
+    example: `
+    function add(n){
+      let fn = (x) => add(n+x);
+      //fn becomes a function which contains add(n+x)
+      fn.valueOf=()=>n;
+      //valueOf returns the nativ value 
+      //setting the fn value on n 
+      return fn;
+      }
+
+    function add (num) {
+      function adder(n) {
+        // if the next potential argument is falsey, we can exist and return accumulated sum
+        if (!n) {
+          return num;
+        } else {
+          // otherwise we keep a running sum by adding the newest argument to num
+          //  we chain the process by returning our named function
+          num += n;
+          return adder;
+        }
+      }
+    
+      return adder;
+  }
+  
+  //first function add(1)(2)(3).valueOf();
+  //second function add(1)(2)(3)();
+    `
+  },
+  {
+    question: "Why you might want to create static class members?",
+    answer:
+      "- Static class members (properties/methods) are not tied to a specific instance of a class and have the same value regardless of which instance is referring to it. Static properties are typically configuration variables and static methods are usually pure utility functions which do not depend on the state of the instance.",
+    example: `function countMyself() {
+// Check to see if the counter has been initialized
+if ( typeof countMyself.counter == 'undefined' ) {
+    // It has not... perform the initialization
+    // after the first time the counter will never set back
+    // to 0 because it is now static
+    countMyself.counter = 0;
+}
+
+// Do something stupid to indicate the value
+alert(++countMyself.counter);
+}`
+  },
+  {
+    question:
+      "What are the benefits of using spread syntax and how is it different from rest syntax?",
+    answer: `- ES6's spread syntax is very useful when coding in a functional paradigm as we can easily create copies of arrays or objects without resorting to Object.create, slice, or a library function. This language feature is used often in Redux and RxJS projects.
+    
+    
+    function putDookieInAnyArray(arr) {
+      return [...arr, 'dookie'];
+    }
+    
+    const result = putDookieInAnyArray(['I', 'really', "don't", 'like']); // ["I", "really", "don't", "like", "dookie"]
+    
+    const person = {
+      name: 'Todd',
+      age: 29,
+    };
+    
+    const copyOfTodd = { ...person };
+
+    - ES6's rest syntax offers a shorthand for including an arbitrary number of arguments to be passed to a function. It is like an inverse of the spread syntax, taking data and stuffing it into an array rather than unpacking an array of data, and it works in function arguments, as well as in array and object destructuring assignments.
+
+          function addFiveToABunchOfNumbers(...numbers) {
+            return numbers.map(x => x + 5);
+          }
+          
+          const result = addFiveToABunchOfNumbers(4, 5, 6, 7, 8, 9, 10); // [9, 10, 11, 12, 13, 14, 15]
+          
+          const [a, b, ...rest] = [1, 2, 3, 4]; // a: 1, b: 2, rest: [3, 4]
+          
+          const { e, f, ...others } = {
+            e: 1,
+            f: 2,
+            g: 3,
+            h: 4,
+          }; // e: 1, f: 2, others: { g: 3, h: 4 }
+    `
   }
 ];
 
