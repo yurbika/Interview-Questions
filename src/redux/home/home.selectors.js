@@ -2,9 +2,9 @@ import { createSelector } from "reselect";
 
 const selectHome = state => state.home;
 
-export const selectJavaScript = createSelector(
+export const selectQuestions = createSelector(
   [selectHome],
-  home => home.javaScriptQuestionsVisible
+  home => home.questionsVisible
 );
 
 export const selectSolution = createSelector(

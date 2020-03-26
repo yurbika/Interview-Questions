@@ -1,31 +1,26 @@
 import HomeActionTypes from "./home.types";
 
 const INITIAL_STATE = {
-  javaScriptQuestionsVisible: false,
-  htmlQuestionsVisible: false,
-  cssQuestionsVisible: false,
-  reactQuestionsVisible: false,
-  reduxQuestionsVisible: false,
+  questionsVisible: false,
   solutionVisible: false
 };
 
 const homeReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS:
+    case HomeActionTypes.TOGGLE_QUESTIONS:
       return {
         ...state,
-        javaScriptQuestionsVisible: !state.javaScriptQuestionsVisible
+        questionsVisible: !state.questionsVisible
       };
     case HomeActionTypes.TOGGLE_SOLUTION:
-      return { ...state, solutionVisible: !state.solutionVisible };
+      return {
+        ...state,
+        solutionVisible: !state.solutionVisible
+      };
     case HomeActionTypes.SET_ALL_FALSE:
       return {
         ...state,
-        javaScriptQuestionsVisible: false,
-        htmlQuestionsVisible: false,
-        cssQuestionsVisible: false,
-        reactQuestionsVisible: false,
-        reduxQuestionsVisible: false,
+        questionsVisible: false,
         solutionVisible: false
       };
     default:
