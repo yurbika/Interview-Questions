@@ -8,34 +8,34 @@ import { selectQuestionFile } from "../../redux/quester/quester.selectors";
 import { selectList } from "../../redux/quester/quester.selectors";
 
 //styles
-import "./solution.styles.scss";
+import { Container, Item, ItemWrapper } from "./solution.styles";
 
 const Solution = ({ questions, userAnswers }) => {
   return (
-    <div className="solution-container">
+    <Container>
       <h1>Solution</h1>
       {questions.map((item, index) => (
-        <div className="solution-content-container">
-          <div className="solution-content">
+        <ItemWrapper>
+          <Item>
             <span>Q.: </span>
             <span>{item["question"]}</span>
-          </div>
-          <div className="solution-content">
+          </Item>
+          <Item>
             <span>A.: </span>
             <pre>{item["answer"]}</pre>
-          </div>
-          <div className="solution-content">
+          </Item>
+          <Item>
             <span>Y.A.:</span>
             <pre>{userAnswers[index]}</pre>
-          </div>
+          </Item>
           {!!item["example"] ? (
-            <div className="solution-content">
+            <Item>
               <span>E.:</span> <span>{item["example"]}</span>
-            </div>
+            </Item>
           ) : null}
-        </div>
+        </ItemWrapper>
       ))}
-    </div>
+    </Container>
   );
 };
 
