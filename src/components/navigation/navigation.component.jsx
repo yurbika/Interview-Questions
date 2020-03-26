@@ -31,16 +31,19 @@ import "./navigation.styles.scss";
 const Navigation = ({ index, array, setIndex, addToList, toggle, input }) => {
   return (
     <div className="container">
+      {index > 0 ? (
+        <div className="button-wrapper">
+          <Button secondary onClick={() => setIndex(--index)}>
+            Back
+          </Button>
+        </div>
+      ) : null}
       <div className="button-wrapper">
-        {true ? <Button>Back</Button> : null}
-        {false ? <Button shadow>Back</Button> : null}
-      </div>
-      <div className="button-wrapper middle-child">
         <Button>Menu</Button>
-        {false ? <Button shadow>Menu</Button> : null}
       </div>
       <div className="button-wrapper">
         <Button
+          secondary
           onClick={() => {
             if (index < array.length - 1) {
               addToList({ [array[index]]: input });
@@ -53,9 +56,9 @@ const Navigation = ({ index, array, setIndex, addToList, toggle, input }) => {
             clearInput();
           }}
         >
+          {console.log(index)}
           {index === array.length - 1 ? "Finish" : "Next"}
         </Button>
-        {false ? <Button shadow>Next</Button> : null}
       </div>
     </div>
   );

@@ -1,16 +1,13 @@
 .container {
-  position: absolute;
-  max-width: inherit;
+  position: fixed;
+  max-width: 280px;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
-  z-index: 3;
-  bottom: -60px;
+  justify-content: space-between;
+  z-index: 5;
+  bottom: 15px;
 
   .button-wrapper {
     position: relative;
-    &.middle-child {
-      margin: 0 15px;
-    }
   }
 }

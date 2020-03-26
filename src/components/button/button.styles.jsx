@@ -2,9 +2,16 @@ import styled, { css } from "styled-components";
 import theme from "../../utils/theme";
 
 const getAdditionalStyle = props => {
-  if (props.cancel)
+  if (props.secondary)
     return css`
-      background: ${theme.colors.darkGrey};
+      background: transparent;
+      border: 1px solid ${theme.colors.blue};
+      span {
+        color: ${theme.colors.blue};
+      }
+      &:hover {
+        background: ${theme.colors.lightOrange};
+      }
     `;
   if (props.shadow)
     return css`
@@ -27,7 +34,7 @@ export const CustomButtonContainer = styled.button`
   span {
     color: white;
     pointer-events: none;
-    padding: 15px 30px;
+    padding: 10px 15px;
   }
 
   &:hover {

@@ -31,9 +31,9 @@ class Home extends React.Component {
           <Content>
             <Menu />
             {show ? <Quester /> : null}
-            <Navigation />
           </Content>
         ) : null}
+        {solutionVisible ? <Navigation /> : show ? <Navigation /> : null}
         {solutionVisible ? <Solution /> : null}
       </Container>
     );
