@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
 
 //components
-import Navbar from "../../components/navbar/navbar.component";
+import Menu from "../../components/menu/menu.component";
 import Quester from "../../components/quester/quester.component";
 import Solution from "../../components/solution/solution.component";
 
@@ -28,7 +28,7 @@ class Home extends React.Component {
       <div className="container">
         {!solutionVisible ? (
           <div className="content-container">
-            <Navbar />
+            <Menu />
             {show ? <Quester /> : null}
           </div>
         ) : null}

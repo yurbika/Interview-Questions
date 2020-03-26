@@ -1,9 +1,10 @@
 import styled, { css } from "styled-components";
+import theme from "../../utils/theme";
 
 const getAdditionalStyle = props => {
   if (props.cancel)
     return css`
-      background: #595959;
+      background: ${theme.colors.darkGrey};
     `;
 };
 
@@ -14,7 +15,7 @@ export const CustomButtonContainer = styled.button`
   height: 2.5rem;
   outline: none;
   border: none;
-  background: #f2490c;
+  background: ${theme.colors.orange};
   border-radius: 15px;
   font-size: 1rem;
   span {
@@ -22,7 +23,7 @@ export const CustomButtonContainer = styled.button`
     pointer-events: none;
   }
   &:hover {
-    background: #010a26;
+    background: ${theme.colors.blue};
   }
   ${getAdditionalStyle}
 `;

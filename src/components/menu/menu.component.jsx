@@ -11,13 +11,13 @@ import {
 } from "../../redux/quester/quester.action";
 
 //styles
-import "./navbar.styles.scss";
+import "./menu.styles.scss";
 
 //utils
 import JavaScriptQuestions from "../../questions/js-questions/javaScript";
-import { createRandomOrderOfNumbers } from "../../components/quester/quester.utils";
+import { createRandomOrderOfNumbers } from "../quester/quester.utils";
 
-const Navbar = ({ toggle, setQuestionFile, setQuestionsOrder }) => (
+const Menu = ({ toggle, setQuestionFile, setQuestionsOrder }) => (
   <div className="navbar" id="navbar">
     <h4>Select a section:</h4>
     <ul>
@@ -48,4 +48,4 @@ const mapDispatchToPrps = dispatch => ({
   setQuestionsOrder: array => dispatch(setQuestionsOrder(array))
 });
 
-export default connect(null, mapDispatchToPrps)(Navbar);
+export default connect(null, mapDispatchToPrps)(Menu);
