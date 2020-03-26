@@ -8,6 +8,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   overflow-y: scroll;
+  overflow-x: hidden;
 `;
 
 export const Content = styled.div`
@@ -25,4 +26,5 @@ export const Content = styled.div`
   box-shadow: 5px 5px 5px ${theme.colors.rgbaBlue};
   transition: all 0.5s ease-in;
   margin-bottom: 60px;
+  display: none;
 `;

@@ -10,7 +10,7 @@ import Navigation from "../../components/navigation/navigation.component";
 
 //redux
 import {
-  selectJavaScript,
+  selectQuestions,
   selectSolution
 } from "../../redux/home/home.selectors";
 
@@ -19,29 +19,29 @@ import { Container, Content } from "./home.styles";
 
 class Home extends React.Component {
   render() {
-    const { jsVisible, solutionVisible } = this.props;
-
-    //for more var
-    let show = false;
-    if (jsVisible) show = true;
+    const { questionsVisible, solutionVisible } = this.props;
 
     return (
       <Container>
         {!solutionVisible ? (
           <Content>
             <Menu />
-            {show ? <Quester /> : null}
+            {questionsVisible ? <Quester /> : null}
           </Content>
         ) : null}
-        {solutionVisible ? <Navigation /> : show ? <Navigation /> : null}
-        {solutionVisible ? <Solution /> : null}
+        {solutionVisible ? (
+          <Navigation />
+        ) : questionsVisible ? (
+          <Navigation />
+        ) : null}
+        {true ? <Solution /> : null}
       </Container>
     );
   }
 }
 
 const mapStateToProps = createStructuredSelector({
-  jsVisible: selectJavaScript,
+  questionsVisible: selectQuestions,
   solutionVisible: selectSolution
 });
 
