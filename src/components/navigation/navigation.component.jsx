@@ -30,7 +30,7 @@ import toggle from "../../redux/home/home.action";
 import HomeActionTypes from "../../redux/home/home.types";
 
 //styles
-import "./navigation.styles.scss";
+import { Container, ButtonWrapper } from "./navigation.styles";
 
 const Navigation = ({
   index,
@@ -44,22 +44,19 @@ const Navigation = ({
   solutionVisible
 }) => {
   return (
-    <div className={"container" + (solutionVisible ? " solution" : "")}>
+    <Container solution={solutionVisible}>
       {!solutionVisible ? (
         index > 0 ? (
-          <div className="button-wrapper">
+          <ButtonWrapper>
             <Button secondary onClick={() => setIndex(--index)}>
               Back
             </Button>
-          </div>
+          </ButtonWrapper>
         ) : null
       ) : null}
-      <div className="button-wrapper">
+      <ButtonWrapper>
         <Button
           onClick={() => {
-            /*
-        reseting everything
-        */
             toggle(HomeActionTypes.SET_ALL_FALSE);
             clearEverything();
             if (!!document.getElementById("menu")) {
@@ -70,9 +67,9 @@ const Navigation = ({
         >
           Menu
         </Button>
-      </div>
+      </ButtonWrapper>
       {!solutionVisible ? (
-        <div className="button-wrapper">
+        <ButtonWrapper>
           <Button
             secondary
             onClick={() => {
@@ -90,9 +87,9 @@ const Navigation = ({
             {console.log(index)}
             {index === array.length - 1 ? "Finish" : "Next"}
           </Button>
-        </div>
+        </ButtonWrapper>
       ) : null}
-    </div>
+    </Container>
   );
 };
 
