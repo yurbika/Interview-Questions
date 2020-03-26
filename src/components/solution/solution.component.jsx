@@ -7,6 +7,9 @@ import { selectQuestionFile } from "../../redux/quester/quester.selectors";
 
 import { selectList } from "../../redux/quester/quester.selectors";
 
+//utils
+import KEY_GENERATOR from "../../utils/uniqueKey";
+
 //styles
 import { Container, Item, ItemWrapper } from "./solution.styles";
 
@@ -15,7 +18,7 @@ const Solution = ({ questions, userAnswers }) => {
     <Container>
       <h1>Solution</h1>
       {questions.map((item, index) => (
-        <ItemWrapper>
+        <ItemWrapper key={KEY_GENERATOR("Solution-Container-")}>
           <Item>
             <span>Q.: </span>
             <span>{item["question"]}</span>
