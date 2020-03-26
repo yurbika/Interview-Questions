@@ -18,6 +18,16 @@ const homeReducer = (state = INITIAL_STATE, action) => {
       };
     case HomeActionTypes.TOGGLE_SOLUTION:
       return { ...state, solutionVisible: !state.solutionVisible };
+    case HomeActionTypes.SET_ALL_FALSE:
+      return {
+        ...state,
+        javaScriptQuestionsVisible: false,
+        htmlQuestionsVisible: false,
+        cssQuestionsVisible: false,
+        reactQuestionsVisible: false,
+        reduxQuestionsVisible: false,
+        solutionVisible: false
+      };
     default:
       return state;
   }

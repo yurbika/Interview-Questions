@@ -40,6 +40,15 @@ const questerReducer = (state = INITIAL_STATE, action) => {
         ...state,
         currInputText: ""
       };
+    case QuesterActionTypes.CLEAR_EVERYTHING:
+      return {
+        ...state,
+        questionFile: null,
+        listOfAskedQuestionsWithAnswers: {},
+        questionsOrder: [],
+        index: 0,
+        currInputText: ""
+      };
     default:
       return state;
   }

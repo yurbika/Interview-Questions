@@ -28,3 +28,7 @@ export const setInput = text => ({
 export const clearInput = () => ({
   type: QuesterActionTypes.CLEAR_INPUT
 });
+
+export const clearEverything = () => ({
+  type: QuesterActionTypes.CLEAR_EVERYTHING
+});

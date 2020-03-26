@@ -8,6 +8,10 @@ const toggle = type => {
       return {
         type: HomeActionTypes.TOGGLE_SOLUTION
       };
+    case HomeActionTypes.SET_ALL_FALSE:
+      return {
+        type: HomeActionTypes.SET_ALL_FALSE
+      };
     default:
       return null;
   }
