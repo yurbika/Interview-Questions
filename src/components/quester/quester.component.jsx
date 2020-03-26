@@ -50,23 +50,6 @@ const Quester = ({
           setInput(`${e.target.value}`);
         }}
       />
-      <Button
-        cancel
-        onClick={() => {
-          if (index < array.length - 1) {
-            clearInput();
-            console.log(input);
-            addToList({ [array[index]]: input });
-            setIndex(++index);
-          } else {
-            addToList({ [array[index]]: input });
-            toggle(HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS);
-            toggle(HomeActionTypes.TOGGLE_SOLUTION);
-          }
-        }}
-      >
-        {index === array.length - 1 ? "Finish" : "Next"}
-      </Button>
     </Container>
   );
 };

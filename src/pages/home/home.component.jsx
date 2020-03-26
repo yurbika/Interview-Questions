@@ -6,6 +6,7 @@ import { createStructuredSelector } from "reselect";
 import Menu from "../../components/menu/menu.component";
 import Quester from "../../components/quester/quester.component";
 import Solution from "../../components/solution/solution.component";
+import Navigation from "../../components/navigation/navigation.component";
 
 //redux
 import {
@@ -30,6 +31,7 @@ class Home extends React.Component {
           <Content>
             <Menu />
             {show ? <Quester /> : null}
+            <Navigation />
           </Content>
         ) : null}
         {solutionVisible ? <Solution /> : null}
