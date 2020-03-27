@@ -1,5 +1,3 @@
-import React from "react";
-
 const HTMLQuestions = [
   {
     question: "How do you serve a page with content in multiple languages?",
@@ -9,7 +7,7 @@ const HTMLQuestions = [
   {
     question:
       "What kind of things must you be wary of when design or developing for multilingual sites?",
-    answer: `- Uselang attribute in your HTML.
+    answer: `- Use lang attribute in your HTML.
 
 - Directing users to their native language - Allow a user to change his country/language easily without hassle.
 
