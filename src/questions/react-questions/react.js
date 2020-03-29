@@ -352,6 +352,104 @@ callback:
     question: "How to enable production mode in React?",
     answer:
       "You should use Webpack's DefinePlugin method to set NODE_ENV to production, by which it strip out things like propType validation and extra warnings. Apart from this, if you minify the code, for example, Uglify's dead-code elimination to strip out development only code and comments, it will drastically reduce the size of your bundle."
+  },
+  {
+    question:
+      "What is the purpose of getDerivedStateFromProps() lifecycle method?",
+    answer:
+      "The new static getDerivedStateFromProps() lifecycle method is invoked after a component is instantiated as well as before it is re-rendered. It can return an object to update state, or null to indicate that the new props do not require any state updates."
+  },
+  {
+    question:
+      "What is the purpose of getSnapshotBeforeUpdate() lifecycle method?",
+    answer:
+      "The new getSnapshotBeforeUpdate() lifecycle method is called right before DOM updates. The return value from this method will be passed as the third parameter to componentDidUpdate()."
+  },
+  {
+    question: "Do Hooks replace render props and higher order components?",
+    answer:
+      "Both render props and higher-order components render only a single child but in most of the cases Hooks are a simpler way to serve this by reducing nesting in your tree."
+  },
+  {
+    question: "What is the recommended ordering of methods in component class?",
+    answer: `1. static methods
+
+2. constructor()
+
+3. getChildContext()
+
+4. componentWillMount()
+
+5. componentDidMount()
+
+6. componentWillReceiveProps()
+
+7. shouldComponentUpdate()
+
+8. componentWillUpdate()
+
+9. componentDidUpdate()
+
+10. componentWillUnmount()
+
+11. click handlers or event handlers like onClickSubmit() or onChangeDescription()
+
+12. getter methods for render like getSelectReason() or getFooterContent()
+
+13. optional render methods like renderNavigation() or renderProfilePicture()
+
+14. render()`
+  },
+  {
+    question: "What is a switching component?",
+    answer:
+      "A switching component is a component that renders one of many components. We need to use object to map prop values to components."
+  },
+  {
+    question: "Why we need to pass a function to setState()?",
+    answer:
+      "The reason behind for this is that setState() is an ASYNCHRONOUS operation. React batches state changes for performance reasons, so the state may not change immediately after setState() is called. "
+  },
+  {
+    question: "What is strict mode in React?",
+    answer:
+      "StrictMode is a tool for highlighting potential problems in an application. Like Fragment, StrictMode does not render any visible UI. It activates additional checks and warnings for its descendants."
+  },
+  {
+    question: "What are React Mixins?",
+    answer:
+      "Mixins are a way to totally separate components to have a common functionality."
+  },
+  {
+    question: "Why is isMounted() an anti-pattern?",
+    answer:
+      "The primary use case for isMounted() is to avoid calling setState() after a component has been unmounted, because it will emit a warning."
+  },
+  {
+    question: "What are the Pointer Events supported in React?",
+    answer:
+      "Pointer Events provide a unified way of handling all input events. In the old days we had a mouse and respective event listeners to handle them but nowadays we have many devices which don't correlate to having a mouse, like phones with touch surface or pens. We need to remember that these events will only work in browsers that support the Pointer Events specification."
+  },
+  {
+    question: "Why should component names start with capital letter?",
+    answer:
+      "If you are rendering your component using JSX, the name of that component has to begin with a capital letter otherwise React will throw an error as unrecognized tag. This convention is because only HTML elements and SVG tags can begin with a lowercase letter."
+  },
+  {
+    question: "What is the difference between constructor and getInitialState?",
+    answer:
+      "You should initialize state in the constructor when using ES6 classes, and getInitialState() method when using React.createClass()."
+  },
+  {
+    question: "What is React proptype array with shape?",
+    answer:
+      "If you want to pass an array of objects to a component with a particular shape then use React.PropTypes.shape() as an argument to React.PropTypes.arrayOf().",
+    example: `ReactComponent.propTypes = {
+      arrayWithShape: React.PropTypes.arrayOf(React.PropTypes.shape({
+        color: React.PropTypes.string.isRequired,
+        fontSize: React.PropTypes.number.isRequired
+      })).isRequired
+    }`
   }
 ];
 
