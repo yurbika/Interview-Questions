@@ -273,6 +273,85 @@ callback:
 - The code complexity increases with inline templating and JSX.
 
 - Too many smaller components leading to over engineering or boilerplate.`
+  },
+  {
+    question: "What are error boundaries in React v16?",
+    answer:
+      "Error boundaries are components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed."
+  },
+  {
+    question: "How error boundaries handled in React v15?",
+    answer:
+      "React v15 provided very basic support for error boundaries using unstable_handleError method. It has been renamed to componentDidCatch in React v16."
+  },
+  {
+    question: "What are the recommended ways for static type checking?",
+    answer:
+      "Normally we use PropTypes library (React.PropTypes moved to a prop-types package since React v15.5) for type checking in the React applications. For large code bases, it is recommended to use static type checkers such as Flow or TypeScript, that perform type checking at compile time and provide auto-completion features."
+  },
+  {
+    question: "What is the use of react-dom package?",
+    answer: `The react-dom package provides DOM-specific methods that can be used at the top level of your app. Most of the components are not required to use this module. Some of the methods of this package are:
+
+- render()
+
+- hydrate()
+
+- unmountComponentAtNode()
+
+- findDOMNode()
+
+- createPortal()`
+  },
+  {
+    question: "What is ReactDOMServer?",
+    answer:
+      "The ReactDOMServer object enables you to render components to static markup. Typically, it’s used on a Node server"
+  },
+  {
+    question: "How to use innerHTML in React?",
+    answer:
+      "The dangerouslySetInnerHTML attribute is React's replacement for using innerHTML in the browser DOM. Just like innerHTML, it is risky to use this attribute considering cross-site scripting (XSS) attacks. You just need to pass a __html object as key and HTML text as value."
+  },
+  {
+    question: "How to use styles in React?",
+    answer:
+      "The style attribute accepts a JavaScript object with camelCased properties rather than a CSS string. This is consistent with the DOM style JavaScript property, is more efficient, and prevents XSS security holes."
+  },
+  {
+    question: "What will happen if you use setState() in constructor?",
+    answer:
+      "When you use setState(), then apart from assigning to the object state React also re-renders the component and all its children. You would get error like this: Can only update a mounted or mounting component. So we need to use this.state to initialize variables inside constructor."
+  },
+  {
+    question: "What is the impact of indexes as keys?",
+    answer:
+      "Keys should be stable, predictable, and unique so that React can keep track of elements."
+  },
+  {
+    question: "Is it good to use setState() in componentWillMount() method?",
+    answer:
+      "No, we need to make sure async calls for component initialization happened in componentDidMount() instead of componentWillMount()."
+  },
+  {
+    question: "What will happen if you use props in initial state?",
+    answer:
+      "If the props on the component are changed without the component being refreshed, the new prop value will never be displayed because the constructor function will never update the current state of the component. The initialization of state from props only runs when the component is first created."
+  },
+  {
+    question: "Why we need to be careful when spreading props on DOM elements?",
+    answer:
+      "When we spread props we run into the risk of adding unknown HTML attributes, which is a bad practice. Instead we can use prop destructuring with ...rest operator, so it will add only required props."
+  },
+  {
+    question: "How you implement Server Side Rendering?",
+    answer:
+      "React is already equipped to handle rendering on Node servers. A special version of the DOM renderer is available, which follows the same pattern as on the client side."
+  },
+  {
+    question: "How to enable production mode in React?",
+    answer:
+      "You should use Webpack's DefinePlugin method to set NODE_ENV to production, by which it strip out things like propType validation and extra warnings. Apart from this, if you minify the code, for example, Uglify's dead-code elimination to strip out development only code and comments, it will drastically reduce the size of your bundle."
   }
 ];
 
