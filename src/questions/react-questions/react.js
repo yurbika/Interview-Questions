@@ -450,6 +450,76 @@ callback:
         fontSize: React.PropTypes.number.isRequired
       })).isRequired
     }`
+  },
+  {
+    question: "What is the difference between React and ReactDOM?",
+    answer:
+      "The react package contains React.createElement(), React.Component, React.Children, and other helpers related to elements and component classes. You can think of these as the isomorphic or universal helpers that you need to build components. The react-dom package contains ReactDOM.render(), and in react-dom/server we have server-side rendering support with ReactDOMServer.renderToString() and ReactDOMServer.renderToStaticMarkup().    "
+  },
+  {
+    question:
+      "What is the difference between setState() and replaceState() methods?    ",
+    answer:
+      "When you use setState() the current and previous states are merged. replaceState() throws out the current state, and replaces it with only what you provide."
+  },
+  {
+    question: "How to pretty print JSON with React?",
+    answer:
+      "We can use <pre> tag so that the formatting of the JSON.stringify() is retained."
+  },
+  {
+    question: "Why you can't update props in React?",
+    answer:
+      "The React philosophy is that props should be immutable and top-down. This means that a parent can send any prop values to a child, but the child can't modify received props."
+  },
+  {
+    question: "What are the possible ways of updating objects in state?",
+    answer: `- Using Object.assign()
+
+- spread operator
+
+- setState with a function`
+  },
+  {
+    question: "What are polyfills?",
+    answer:
+      "A polyfill is a browser fallback, made in JavaScript, that allows functionality you expect to work in modern browsers to work in older browsers."
+  },
+  {
+    question: "How to use https instead of http in create-react-app?",
+    answer:
+      "You just need to use HTTPS=true configuration. You can edit your package.json scripts section."
+  },
+  {
+    question: "How do you apply vendor prefixes to inline styles in React?",
+    answer:
+      "React does not apply vendor prefixes automatically. You need to add vendor prefixes manually."
+  },
+  {
+    question: "Why is a component constructor called only once?",
+    answer:
+      "React's reconciliation algorithm assumes that without any information to the contrary, if a custom component appears in the same place on subsequent renders, it's the same component as before, so reuses the previous instance rather than creating a new one."
+  },
+  {
+    question: "What are render props?",
+    answer:
+      "Render Props is a simple technique for sharing code between components using a prop whose value is a function.",
+    example:
+      `<DataProvider render={data => (
+      <h1>{'Hello` +
+      "${data.target}" +
+      `'}</h1>
+    )}/>`
+  },
+  {
+    question: "What is React Router?",
+    answer:
+      "React Router is a powerful routing library built on top of React that helps you add new screens and flows to your application incredibly quickly, all while keeping the URL in sync with what's being displayed on the page."
+  },
+  {
+    question: "How React Router is different from history library?",
+    answer:
+      "React Router is a wrapper around the history library which handles interaction with the browser's window.history with its browser and hash histories. It also provides memory history which is useful for environments that don't have global history, such as mobile app development (React Native) and unit testing with Node."
   }
 ];
 
