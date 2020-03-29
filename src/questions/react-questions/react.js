@@ -91,6 +91,69 @@ const ReactQuestions = [
     question: "What is inline conditional expressions?",
     answer:
       "You can use either if statements or ternary expressions which are available from JS to conditionally render expressions. Apart from these approaches, you can also embed any expressions in JSX by wrapping them in curly braces and then followed by JS logical operator &&."
+  },
+  {
+    question:
+      "What are 'key' props and what is the benefit of using them in arrays of elements?",
+    answer:
+      "A key is a special string attribute you should include when creating arrays of elements. Keys help React identify which items have changed, are added, or are removed."
+  },
+  {
+    question: "What is the use of refs?",
+    answer:
+      "The ref is used to return a reference to the element. They should be avoided in most cases, however, they can be useful when you need a direct access to the DOM element or an instance of a component."
+  },
+  {
+    question: "What are forward refs?",
+    answer:
+      "Ref forwarding is a feature that lets some components take a ref they receive, and pass it further down to a child."
+  },
+  {
+    question:
+      "Which is preferred option with in callback refs and findDOMNode()?",
+    answer: `findDOMNode:
+    class MyComponent extends Component {
+      componentDidMount() {
+        findDOMNode(this).scrollIntoView()
+      }
+    
+      render() {
+        return <div />
+      }
+    }
+    
+callback:
+    class MyComponent extends Component {
+      constructor(props){
+        super(props);
+        this.node = createRef();
+      }
+      componentDidMount() {
+        this.node.current.scrollIntoView();
+      }
+    
+      render() {
+        return <div ref={this.node} />
+      }
+    }`
+  },
+  {
+    question: "What is Virtual DOM?",
+    answer:
+      "The Virtual DOM (VDOM) is an in-memory representation of Real DOM. The representation of a UI is kept in memory and synced with the 'real' DOM. It's a step that happens between the render function being called and the displaying of elements on the screen. This entire process is called reconciliation."
+  },
+  {
+    question: "How Virtual DOM works?",
+    answer: `- Whenever anything may have changed, the entire UI will be re-rendered in a Virtual DOM representation.
+
+- The difference between the previous Virtual DOM representation and the new one will be calculated.
+
+- The real DOM will be updated with what has actually changed. This is very much like applying a patch.`
+  },
+  {
+    question: "What is the difference between Shadow DOM and Virtual DOM?",
+    answer:
+      "Fiber is the new reconciliation engine or reimplementation of core algorithm in React v16. The goal of React Fiber is to increase its suitability for areas like animation, layout, gestures, ability to pause, abort, or reuse work and assign priority to different types of updates; and new concurrency primitives."
   }
 ];
 
