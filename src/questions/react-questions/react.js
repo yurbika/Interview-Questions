@@ -153,7 +153,40 @@ callback:
   {
     question: "What is the difference between Shadow DOM and Virtual DOM?",
     answer:
-      "Fiber is the new reconciliation engine or reimplementation of core algorithm in React v16. The goal of React Fiber is to increase its suitability for areas like animation, layout, gestures, ability to pause, abort, or reuse work and assign priority to different types of updates; and new concurrency primitives."
+      "The Shadow DOM is a browser technology designed primarily for scoping variables and CSS in web components. The Virtual DOM is a concept implemented by libraries in JavaScript on top of browser APIs."
+  },
+  {
+    question: "What are controlled components?",
+    answer:
+      "A Controlled Component is one that takes its current value through props and notifies changes through callbacks like onChange. A parent component 'controls' it by handling the callback and managing its own state and passing the new values as props to the controlled component. You could also call this a 'dumb component'."
+  },
+  {
+    question: "What are uncontrolled components?",
+    answer:
+      "The Uncontrolled Components are the ones that store their own state internally, and you query the DOM using a ref to find its current value when you need it. This is a bit more like traditional HTML."
+  },
+  {
+    question: "What is the difference between createElement and cloneElement?",
+    answer:
+      "JSX elements will be transpiled to React.createElement() functions to create React elements which are going to be used for the object representation of UI. Whereas cloneElement is used to clone an element and pass it new props."
+  },
+  {
+    question: "What is Lifting State Up in React?",
+    answer:
+      "When several components need to share the same changing data then it is recommended to lift the shared state up to their closest common ancestor. "
+  },
+  {
+    question: "What are the different phases of component lifecycle?",
+    answer: `- Mounting: The component is ready to mount in the browser DOM. This phase covers initialization from constructor(), getDerivedStateFromProps(), render(), and componentDidMount() lifecycle methods.
+
+  - Updating: In this phase, the component get updated in two ways, sending the new props and updating the state either from setState() or forceUpdate(). This phase covers getDerivedStateFromProps(), shouldComponentUpdate(), render(), getSnapshotBeforeUpdate() and componentDidUpdate() lifecycle methods.
+
+  - Unmounting: In this last phase, the component is not needed and get unmounted from the browser DOM. This phase includes componentWillUnmount() lifecycle method.`
+  },
+  {
+    question: "What are Higher-Order Components?",
+    answer:
+      "A higher-order component (HOC) is a function that takes a component and returns a new component."
   }
 ];
 
