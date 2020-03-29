@@ -187,6 +187,92 @@ callback:
     question: "What are Higher-Order Components?",
     answer:
       "A higher-order component (HOC) is a function that takes a component and returns a new component."
+  },
+  {
+    question: "What is children prop?",
+    answer:
+      "Children is a prop (this.prop.children) that allow you to pass components as data to other components, just like any other prop you use. Component tree put between component's opening and closing tag will be passed to that component as children prop."
+  },
+  {
+    question:
+      "What is the purpose of using super constructor with props argument?",
+    answer:
+      "A child class constructor cannot make use of this reference until super() method has been called. The same applies for ES6 sub-classes as well. The main reason of passing props parameter to super() call is to access this.props in your child constructors."
+  },
+  {
+    question: "What is reconciliation?",
+    answer:
+      "When a component's props or state change, React decides whether an actual DOM update is necessary by comparing the newly returned element with the previously rendered one. When they are not equal, React will update the DOM. This process is called reconciliation."
+  },
+  {
+    question: "How to set state with a dynamic key name?",
+    answer: `handleInputChange(event) {
+      this.setState({ [event.target.id]: event.target.value })
+    }`
+  },
+  {
+    question: "Why React uses className over class attribute?",
+    answer:
+      "class is a keyword in JavaScript, and JSX is an extension of JavaScript. That's the principal reason why React uses className instead of class. Pass a string as the className prop."
+  },
+  {
+    question: "What are fragments?",
+    answer:
+      "It's common pattern in React which is used for a component to return multiple elements. Fragments let you group a list of children without adding extra nodes to the DOM.",
+    example: `render() {
+        return (
+          <React.Fragment>
+            <ChildA />
+            <ChildB />
+            <ChildC />
+          </React.Fragment>
+        )
+      }`
+  },
+  {
+    question: "Why fragments are better than container divs?",
+    answer: `- Fragments are a bit faster and use less memory by not creating an extra DOM node. This only has a real benefit on very large and deep trees.
+
+- Some CSS mechanisms like Flexbox and CSS Grid have a special parent-child relationships, and adding divs in the middle makes it hard to keep the desired layout.
+
+- The DOM Inspector is less cluttered.`
+  },
+  {
+    question: "What are portals in React?",
+    answer:
+      "Portal is a recommended way to render children into a DOM node that exists outside the DOM hierarchy of the parent component."
+  },
+  {
+    question: "What are stateless components?",
+    answer:
+      "If the behaviour is independent of its state then it can be a stateless component."
+  },
+  {
+    question: "What are stateful components?",
+    answer:
+      "If the behaviour of a component is dependent on the state of the component then it can be termed as stateful component."
+  },
+  {
+    question: "What are the advantages of React?",
+    answer: `- Increases the application's performance with Virtual DOM.
+
+- JSX makes code easy to read and write.
+
+- It renders both on client and server side (SSR).
+
+- Easy to integrate with frameworks (Angular, Backbone) since it is only a view library.
+
+- Easy to write unit and integration tests with tools such as Jest.`
+  },
+  {
+    question: "What are the limitations of React?",
+    answer: `- React is just a view library, not a full framework.
+
+- Integrating React into a traditional MVC framework requires some additional configuration.
+
+- The code complexity increases with inline templating and JSX.
+
+- Too many smaller components leading to over engineering or boilerplate.`
   }
 ];
 
