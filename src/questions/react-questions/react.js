@@ -520,6 +520,40 @@ callback:
     question: "How React Router is different from history library?",
     answer:
       "React Router is a wrapper around the history library which handles interaction with the browser's window.history with its browser and hash histories. It also provides memory history which is useful for environments that don't have global history, such as mobile app development (React Native) and unit testing with Node."
+  },
+  {
+    question: "What is flux?",
+    answer:
+      "Flux is an application design paradigm used as a replacement for the more traditional MVC pattern. Action => Dispatcher => Store => View. Every. The most important thing to note is that every change goes via an action through the dispatcher. "
+  },
+  {
+    question: "What is Redux?",
+    answer:
+      "Redux is a predictable state container for JavaScript apps based on the Flux design pattern. "
+  },
+  {
+    question: "What are the core principles of Redux?",
+    answer: `- Single source of truth
+
+- State is read-only
+
+- Changes are made with pure functions`
+  },
+  {
+    question: "Can I dispatch an action in reducer?",
+    answer: "Dispatching an action within a reducer is an anti-pattern."
+  },
+  {
+    question: "Why are Redux state functions called reducers?",
+    answer:
+      "Reducers specify how the application's state changes in response to actions sent to the store. Remember that actions only describe what happened, but don't describe how the application's state changes."
+  },
+  {
+    question:
+      "What is the difference between component and container in React Redux?",
+    answer: `Component is a class or function component that describes the presentational part of your application.
+
+Container is an informal term for a component that is connected to a Redux store. Containers subscribe to Redux state updates and dispatch actions, and they usually don't render DOM elements; they delegate rendering to presentational child components.`
   }
 ];
 
