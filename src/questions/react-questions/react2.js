@@ -89,6 +89,64 @@ React Native - A mobile framework that compiles to native app components, allowi
     question: "What are Styled Components?",
     answer:
       "styled-components is a JavaScript library for styling React applications. It removes the mapping between styles and components, and lets you write actual CSS augmented with JavaScript."
+  },
+  {
+    question: "What is an action in Redux?",
+    answer:
+      "Actions are plain JavaScript objects or payloads of information that send data from your application to your store. They are the only source of information for the store. "
+  },
+  {
+    question: "What is the purpose of registerServiceWorker in React?",
+    answer:
+      "React creates a service worker for you without any configuration by default. The service worker is a web API that helps you cache your assets and other files so that when the user is offline or on slow network, he/she can still see results on the screen, as such, it helps you build a better user experience, that's what you should know about service worker's for now. It's all about adding offline capabilities to your site."
+  },
+  {
+    question: "What are hooks?",
+    answer:
+      "Hooks are functions that let you “hook into” React state and lifecycle features from function components."
+  },
+  {
+    question: "How to ensure hooks followed the rules in your project?",
+    answer:
+      "React team released an ESLint plugin called eslint-plugin-react-hooks that enforces these two rules."
+  },
+  {
+    question: "In which scenarios error boundaries do not catch errors?",
+    answer: `- Inside Event handlers
+
+- Asynchronous code using setTimeout or requestAnimationFrame callbacks
+
+- During Server side rendering
+
+- When errors thrown in the error boundary code itself`
+  },
+  {
+    question: "Why do not you need error boundaries for event handlers?",
+    answer:
+      "Event handlers don't happened or invoked during rendering time unlike render method or lifecycle methods"
+  },
+  {
+    question:
+      "What is the difference between try catch block and error boundaries?",
+    answer:
+      "Try catch block works with imperative code whereas error boundaries are meant for declarative code to render on the screen."
+  },
+  {
+    question: "What is the behavior of uncaught errors in react 16?",
+    answer:
+      "In React 16, errors that were not caught by any error boundary will result in unmounting of the whole React component tree."
+  },
+  {
+    question: "What are the possible return types of render method?",
+    answer: `- React elements
+
+- Arrays and fragments
+
+- Portals
+
+- String and numbers
+
+- Booleans or null`
   }
 ];
 
