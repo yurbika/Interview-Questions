@@ -42,56 +42,51 @@ const Navigation = ({
   clearEverything,
   clearInput,
   solutionVisible
-}) => {
-  return (
-    <Container solution={solutionVisible}>
-      {!solutionVisible ? (
-        index > 0 ? (
-          <ButtonWrapper>
-            <Button secondary onClick={() => setIndex(--index)}>
-              Back
-            </Button>
-          </ButtonWrapper>
-        ) : null
-      ) : null}
+}) => (
+  <Container solution={solutionVisible}>
+    {index > 0 && !solutionVisible ? (
       <ButtonWrapper>
-        <Button
-          onClick={() => {
-            toggle(HomeActionTypes.SET_ALL_FALSE);
-            clearEverything();
-            if (!!document.getElementById("menu")) {
-              document.getElementById("menu").style.opacity = "1";
-              document.getElementById("menu").style.pointerEvents = "unset";
-            }
-          }}
-        >
-          Menu
+        <Button secondary onClick={() => setIndex(index - 1)}>
+          Back
         </Button>
       </ButtonWrapper>
-      {!solutionVisible ? (
-        <ButtonWrapper>
-          <Button
-            secondary
-            onClick={() => {
-              if (index < array.length - 1) {
-                addToList({ [array[index]]: input });
-                setIndex(++index);
-              } else {
-                addToList({ [array[index]]: input });
-                toggle(HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS);
-                toggle(HomeActionTypes.TOGGLE_SOLUTION);
-              }
-              clearInput();
-            }}
-          >
-            {console.log(index)}
-            {index === array.length - 1 ? "Finish" : "Next"}
-          </Button>
-        </ButtonWrapper>
-      ) : null}
-    </Container>
-  );
-};
+    ) : null}
+    <ButtonWrapper>
+      <Button
+        onClick={() => {
+          toggle(HomeActionTypes.SET_ALL_FALSE);
+          clearEverything();
+          if (!!document.getElementById("menu")) {
+            document.getElementById("menu").style.opacity = "1";
+            document.getElementById("menu").style.pointerEvents = "unset";
+          }
+        }}
+      >
+        Menu
+      </Button>
+    </ButtonWrapper>
+    {!solutionVisible ? (
+      <ButtonWrapper>
+        <Button
+          secondary
+          onClick={() => {
+            if (index < array.length - 1) {
+              addToList({ [array[index]]: input });
+              setIndex(index + 1);
+            } else {
+              addToList({ [array[index]]: input });
+              toggle(HomeActionTypes.TOGGLE_QUESTIONS);
+              toggle(HomeActionTypes.TOGGLE_SOLUTION);
+            }
+            clearInput();
+          }}
+        >
+          {index === array.length - 1 ? "Finish" : "Next"}
+        </Button>
+      </ButtonWrapper>
+    ) : null}
+  </Container>
+);
 
 const mapStateToProps = createStructuredSelector({
   questions: selectQuestionFile,
@@ -112,9 +107,5 @@ const mapDispatchToProps = dispatch => ({
   //home action
   toggle: type => dispatch(toggle(type))
 });
-//erlaubt es antworten zu speichern im localstorage
-//next button wird hier implementiert
-//back button um eine frage zurück zu gehen
-//ein button um ins menü wieder zukommen
 
 export default connect(mapStateToProps, mapDispatchToProps)(Navigation);

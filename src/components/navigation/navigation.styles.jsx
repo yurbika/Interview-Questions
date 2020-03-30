@@ -9,12 +9,15 @@ const getAdditionalStyle = props => {
 
 export const Container = styled.div`
   position: fixed;
-  max-width: 280px;
+  max-width: 320px;
+  right: 20px;
+  left: 0;
+  margin: 0 auto;
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   z-index: 5;
-  bottom: 15px;
+  bottom: 100px;
   ${getAdditionalStyle}
 `;
 
