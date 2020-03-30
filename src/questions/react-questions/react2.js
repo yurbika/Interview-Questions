@@ -58,11 +58,37 @@ Both Redux Thunk and Redux Saga take care of dealing with side effects.`
   {
     question: "How to add multiple middlewares to Redux?",
     answer: `const middlewares = [];
-    
+
 middlewares.push(logger);
 middlewares.push(ReduxThunk);
 
 const store = createStore(rootReducer, applyMiddleware(...middlewares));`
+  },
+  {
+    question: "How Relay is different from Redux?",
+    answer:
+      "Relay is similar to Redux in that they both use a single store. The main difference is that relay only manages state originated from the server, and all access to the state is used via GraphQL queries (for reading data) and mutations (for changing data). Relay caches the data for you and optimizes data fetching for you, by fetching only changed data and nothing more."
+  },
+  {
+    question: "What is the difference between React Native and React?",
+    answer: `React - A JavaScript library, supporting both front end web and being run on the server, for building user interfaces and web applications.
+      
+React Native - A mobile framework that compiles to native app components, allowing you to build native mobile applications (iOS, Android, and Windows) in JavaScript that allows you to use React to build your components, and implements React under the hood.`
+  },
+  {
+    question: "What is reselect?",
+    answer:
+      "Reselect is a selector library (for Redux) which uses memoization concept."
+  },
+  {
+    question: "How does reselect work?",
+    answer:
+      "Reselect keeps a copy of the last inputs/outputs of the last call, and recomputes the result only if one of the inputs changes."
+  },
+  {
+    question: "What are Styled Components?",
+    answer:
+      "styled-components is a JavaScript library for styling React applications. It removes the mapping between styles and components, and lets you write actual CSS augmented with JavaScript."
   }
 ];
 
