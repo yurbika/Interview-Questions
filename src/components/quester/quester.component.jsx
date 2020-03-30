@@ -10,36 +10,16 @@ import {
   selectInput
 } from "../../redux/quester/quester.selectors";
 
-import {
-  setQuestionsOrder,
-  setIndex,
-  setInput,
-  clearInput,
-  addToList
-} from "../../redux/quester/quester.action";
-
-import { selectQuestions } from "../../redux/home/home.selectors";
-import toggle from "../../redux/home/home.action";
+import { setInput } from "../../redux/quester/quester.action";
 
 //styles
 import { Container } from "./quester.styles";
 
-const Quester = ({
-  questions,
-  array,
-  index,
-  setIndex,
-  input,
-  setInput,
-  clearInput,
-  addToList,
-  //home redux
-  questionsVisible,
-  toggle
-}) => {
+const Quester = ({ questions, array, index, input, setInput }) => {
   return (
     <Container>
       <span>{questions[array[index]]["question"]}</span>
+      <span>{index + 1 + "/" + array.length}</span>
       <textarea
         value={input}
         onChange={e => {
@@ -54,18 +34,11 @@ const mapStateToProps = createStructuredSelector({
   questions: selectQuestionFile,
   array: selectQuestionsOrder,
   index: selectIndex,
-  input: selectInput,
-  questionsVisible: selectQuestions
+  input: selectInput
 });
 
 const mapDispatchToProps = dispatch => ({
-  setQuestionsOrder: array => dispatch(setQuestionsOrder(array)),
-  setIndex: num => dispatch(setIndex(num)),
-  setInput: str => dispatch(setInput(str)),
-  clearInput: () => dispatch(clearInput()),
-  addToList: object => dispatch(addToList(object)),
-  //home action
-  toggle: type => dispatch(toggle(type))
+  setInput: str => dispatch(setInput(str))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Quester);
