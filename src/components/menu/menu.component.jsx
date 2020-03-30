@@ -15,17 +15,24 @@ import { MenuContainer } from "./menu.styles";
 
 //utils
 import JavaScriptQuestions from "../../questions/js-questions/javaScript";
+import HTMLQuestions from "../../questions/html-questions/html.jsx";
+import CSSQuestions from "../../questions/css-questions/css";
+import ReactQuestions from "../../questions/react-questions/react";
+import ReactQuestions2 from "../../questions/react-questions/react2";
 import { createRandomOrderOfNumbers } from "../quester/quester.utils";
 
 const Menu = ({ toggle, setQuestionFile, setQuestionsOrder }) => (
   <MenuContainer id="menu">
     <h4>Select a section:</h4>
-    <ul>
+    <ul
+      onClick={() => {
+        toggle(HomeActionTypes.TOGGLE_QUESTIONS);
+        document.getElementById("menu").style.opacity = 0;
+        document.getElementById("menu").style.pointerEvents = "none";
+      }}
+    >
       <li
         onClick={() => {
-          toggle(HomeActionTypes.TOGGLE_JAVASCRIPT_QUESTIONS);
-          document.getElementById("menu").style.opacity = 0;
-          document.getElementById("menu").style.pointerEvents = "none";
           setQuestionFile(JavaScriptQuestions);
           setQuestionsOrder(
             createRandomOrderOfNumbers(JavaScriptQuestions.length - 1)
@@ -34,10 +41,46 @@ const Menu = ({ toggle, setQuestionFile, setQuestionsOrder }) => (
       >
         JavaScript
       </li>
-      <li>CSS</li>
-      <li>HTML</li>
-      <li>React</li>
-      <li>Redux</li>
+      <li
+        onClick={() => {
+          setQuestionFile(CSSQuestions);
+          setQuestionsOrder(
+            createRandomOrderOfNumbers(CSSQuestions.length - 1)
+          );
+        }}
+      >
+        CSS
+      </li>
+      <li
+        onClick={() => {
+          setQuestionFile(HTMLQuestions);
+          setQuestionsOrder(
+            createRandomOrderOfNumbers(HTMLQuestions.length - 1)
+          );
+        }}
+      >
+        HTML
+      </li>
+      <li
+        onClick={() => {
+          setQuestionFile(ReactQuestions);
+          setQuestionsOrder(
+            createRandomOrderOfNumbers(ReactQuestions.length - 1)
+          );
+        }}
+      >
+        React Part 1
+      </li>
+      <li
+        onClick={() => {
+          setQuestionFile(ReactQuestions2);
+          setQuestionsOrder(
+            createRandomOrderOfNumbers(ReactQuestions2.length - 1)
+          );
+        }}
+      >
+        React Part 2
+      </li>
     </ul>
   </MenuContainer>
 );
