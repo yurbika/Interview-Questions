@@ -147,6 +147,23 @@ React Native - A mobile framework that compiles to native app components, allowi
 - String and numbers
 
 - Booleans or null`
+  },
+  {
+    question: "What is the main purpose of constructor?",
+    answer: `- to initialize local state by assigning object to this.state
+- for binding event handler methods to the instance For example, the below code covers both the above cases`
+  },
+  {
+    question: "What is suspense component?",
+    answer:
+      "If the module containing the dynamic import is not yet loaded by the time parent component renders, you must show some fallback content while you’re waiting for it to load using a loading indicator."
+  },
+  {
+    question:
+      "What is the difference between Imperative and Declarative in React?",
+    answer: `Imperative - allows you to control your application
+      
+Declarative -  allows you to control flow and state in your application`
   }
 ];
 
