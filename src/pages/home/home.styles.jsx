@@ -26,5 +26,4 @@ export const Content = styled.div`
   box-shadow: 5px 5px 5px ${theme.colors.rgbaBlue};
   transition: all 0.5s ease-in;
   margin-bottom: 60px;
-  display: none;
 `;

@@ -34,7 +34,7 @@ class Home extends React.Component {
         ) : questionsVisible ? (
           <Navigation />
         ) : null}
-        {true ? <Solution /> : null}
+        {solutionVisible ? <Solution /> : null}
       </Container>
     );
   }
