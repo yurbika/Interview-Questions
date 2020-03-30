@@ -17,12 +17,13 @@ import JavaScriptQuestions from "../../questions/js-questions/javaScript";
 import HTMLQuestions from "../../questions/html-questions/html.jsx";
 import CSSQuestions from "../../questions/css-questions/css";
 import ReactQuestions from "../../questions/react-questions/react";
+import ReactQuestions2 from "../../questions/react-questions/react2";
 
 const Solution = ({ questions, userAnswers }) => {
   return (
     <Container>
       <h1>Solution</h1>
-      {ReactQuestions.map((item, index) => (
+      {ReactQuestions2.map((item, index) => (
         <ItemWrapper key={KEY_GENERATOR("Solution-Container-")}>
           <Item>
             <span title="Question">Q.: </span>
