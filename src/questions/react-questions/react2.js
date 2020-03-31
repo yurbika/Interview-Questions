@@ -1,5 +1,39 @@
 const ReactQuestions2 = [
   {
+    question: "What is flux?",
+    answer:
+      "Flux is an application design paradigm used as a replacement for the more traditional MVC pattern. Action => Dispatcher => Store => View. Every. The most important thing to note is that every change goes via an action through the dispatcher. "
+  },
+  {
+    question: "What is Redux?",
+    answer:
+      "Redux is a predictable state container for JavaScript apps based on the Flux design pattern. "
+  },
+  {
+    question: "What are the core principles of Redux?",
+    answer: `- Single source of truth
+
+- State is read-only
+
+- Changes are made with pure functions`
+  },
+  {
+    question: "Can I dispatch an action in reducer?",
+    answer: "Dispatching an action within a reducer is an anti-pattern."
+  },
+  {
+    question: "Why are Redux state functions called reducers?",
+    answer:
+      "Reducers specify how the application's state changes in response to actions sent to the store. Remember that actions only describe what happened, but don't describe how the application's state changes."
+  },
+  {
+    question:
+      "What is the difference between component and container in React Redux?",
+    answer: `Component is a class or function component that describes the presentational part of your application.
+
+Container is an informal term for a component that is connected to a Redux store. Containers subscribe to Redux state updates and dispatch actions, and they usually don't render DOM elements; they delegate rendering to presentational child components.`
+  },
+  {
     question:
       "What is the use of the ownProps parameter in mapStateToProps() and mapDispatchToProps()?",
     answer:
@@ -164,6 +198,11 @@ React Native - A mobile framework that compiles to native app components, allowi
     answer: `Imperative - allows you to control your application
       
 Declarative -  allows you to control flow and state in your application`
+  },
+  {
+    question: "What are the recommended ways for static type checking?",
+    answer:
+      "Normally we use PropTypes library (React.PropTypes moved to a prop-types package since React v15.5) for type checking in the React applications. For large code bases, it is recommended to use static type checkers such as Flow or TypeScript, that perform type checking at compile time and provide auto-completion features."
   }
 ];
 

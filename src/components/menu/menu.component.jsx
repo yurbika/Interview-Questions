@@ -19,6 +19,7 @@ import HTMLQuestions from "../../questions/html-questions/html.jsx";
 import CSSQuestions from "../../questions/css-questions/css";
 import ReactQuestions from "../../questions/react-questions/react";
 import ReactQuestions2 from "../../questions/react-questions/react2";
+import ReactQuestions3 from "../../questions/react-questions/react3";
 import { createRandomOrderOfNumbers } from "../quester/quester.utils";
 
 const Menu = ({ toggle, setQuestionFile, setQuestionsOrder }) => (
@@ -80,6 +81,16 @@ const Menu = ({ toggle, setQuestionFile, setQuestionsOrder }) => (
         }}
       >
         React Part 2
+      </li>
+      <li
+        onClick={() => {
+          setQuestionFile(ReactQuestions3);
+          setQuestionsOrder(
+            createRandomOrderOfNumbers(ReactQuestions3.length - 1)
+          );
+        }}
+      >
+        React Part 3
       </li>
     </ul>
   </MenuContainer>
