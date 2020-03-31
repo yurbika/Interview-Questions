@@ -18,7 +18,7 @@ const JavaScriptQuestions = [
     )
   },
   {
-    question: "What is event bubbling?",
+    question: "Explain event bubbling.",
     answer:
       "Inverse of delegation, also know as Propogations. Events on an element will bubble up and also fire on all parents"
   },
@@ -218,30 +218,6 @@ The main difference between .forEach and .map() is that .map() returns a new arr
     answer: `- The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.`
   },
   {
-    question:
-      "What's the difference between feature detection, feature inference, and using the UA string?",
-    answer: `- Feature Detection:
-    • Feature detection involves working out whether a
-    browser supports a certain block o and running differen 
-    depending on whether it does (or doesn't), so that the browser can
-    always provide a working experience rather crashing/erroring in some
-    browsers.
-  
-- Feature Inference:
-    • Feature inference checks for a feature just like
-    feature detection, but uses another function because it assumes it will
-    also exist
-  
-- UA string:
-    • This is a browser-reported string that allows the network
-    protocol peers to identify the application type, operating system,
-    software vendor or software version of the requesting software user
-    agent. It can be accessed via navigator.userAgent. However, the string
-    is tricky to parse and can be spoofed. For example, Chrome reports both
-    as Chrome and Safari. So to detect Safari you have to check for the
-    Safari string and the absence of the Chrome string. Avoid this method.`
-  },
-  {
     question: "Describe event capturing",
     answer: `Capturing, the event is first captured by the outermost element and propagated to the inner elements.`
   },
@@ -392,7 +368,7 @@ sayNameFromWindow2(); // John`
     question:
       "Can you give an example of a curry function and why this syntax offers an advantage?",
     answer:
-      "- Currying is a pattern where a function with more than one parameter is broken into multiple functions that, when called in series, will accumulate all of the required parameters one at a time. This technique can be useful for makinwritten in a functional style easier to read and compose. It's important to note that for a function to be curried, it needs to start out as one function, then broken out into a sequence of functions that each accepts one parameter.",
+      "- Currying is a pattern where a function with more than one parameter is broken into multiple functions that, when called in series, will accumulate all of the required parameters one at a time. This technique can be useful for making written in a functional style easier to read and compose. It's important to note that for a function to be curried, it needs to start out as one function, then broken out into a sequence of functions that each accepts one parameter.",
     example: `
     function add(n){
       let fn = (x) => add(n+x);
