@@ -5,11 +5,6 @@ const ReactQuestions3 = [
       "When you use setState(), then apart from assigning to the object state React also re-renders the component and all its children. You would get error like this: Can only update a mounted or mounting component. So we need to use this.state to initialize variables inside constructor."
   },
   {
-    question: "What is the impact of indexes as keys?",
-    answer:
-      "Keys should be stable, predictable, and unique so that React can keep track of elements."
-  },
-  {
     question: "Is it good to use setState() in componentWillMount() method?",
     answer:
       "No, we need to make sure async calls for component initialization happened in componentDidMount() instead of componentWillMount()."

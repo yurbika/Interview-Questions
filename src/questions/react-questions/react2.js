@@ -185,7 +185,7 @@ React Native - A mobile framework that compiles to native app components, allowi
   {
     question: "What is the main purpose of constructor?",
     answer: `- to initialize local state by assigning object to this.state
-- for binding event handler methods to the instance For example, the below code covers both the above cases`
+- for binding event handler methods to the instance`
   },
   {
     question: "What is suspense component?",
