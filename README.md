@@ -1,19 +1,14 @@
 # 📄 Table of Contents
 
-- [Introduction](#introduction)
 - [Set up](#setup)
 - [Ambition](#ambition)
-- [Design](#design)
 
 </br>
 </br>
 </br>
 
-<div align="center" name="introduction">
-  <img alt="Logo" src="src/readme/Sayu-Logo.png" width="250"/>
-</div>
 <h1 align="center">
- Test Your Knowledge
+ Test Your Knowledge🌱
 </h1>
 <p align="center">
 An application for improving the knowledge about React
