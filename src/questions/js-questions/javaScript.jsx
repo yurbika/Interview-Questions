@@ -15,36 +15,36 @@ const JavaScriptQuestions = [
           <p>P - Click Me</p>
         </div>
       </Form>
-    )
+    ),
   },
   {
     question: "Explain event bubbling.",
     answer:
-      "Inverse of delegation, also know as Propogations. Events on an element will bubble up and also fire on all parents"
+      "Inverse of delegation, also know as Propogations. Events on an element will bubble up and also fire on all parents",
   },
   {
     question: "What is the difference between target and currentTarget?",
     answer:
-      "- target = the element that triggered the event \n- currentTarget = the element that the event listener is attached to"
+      "- target = the element that triggered the event \n- currentTarget = the element that the event listener is attached to",
   },
   {
     question: "What does IIFE mean?",
-    answer: "Immediately invoked function expression"
+    answer: "Immediately invoked function expression",
   },
   {
     question: "What is the purpose of an IIFE",
     answer: "Control variable scope",
-    example: "(()=>/* do something */)"
+    example: "(()=>/* do something */)",
   },
   {
     question: "What is the difference between an expression and a statement",
     answer:
-      "- expression: is any valid unit that resolves to a value \n- statement: stands for anything that performs an action"
+      "- expression: is any valid unit that resolves to a value \n- statement: stands for anything that performs an action",
   },
   {
     question:
       "Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?",
-    answer: "- Reduces collision\n- Maintain independence"
+    answer: "- Reduces collision\n- Maintain independence",
   },
   {
     question: "Explain hoisting",
@@ -64,24 +64,24 @@ function foo() {
     document.write(s); 
     s = "test";
     document.write(s); 
-  }`
+  }`,
   },
   {
     question:
       "Whats the difference between a variable that is: null, undefined or undeclared?",
     answer:
-      "- null: is a value, a 'nothing' value\n- undefined: a variable thats only declared\n- undeclared: a variable that isnt existing"
+      "- null: is a value, a 'nothing' value\n- undefined: a variable thats only declared\n- undeclared: a variable that isnt existing",
   },
   {
     question:
       "How would you go about checking for null, undefined or undeclared?",
     answer:
-      "-for the first two a triple sign(===) will do the job (carefull if you use typeof, because null is a object and undefined is a string)\n- undeclared will find you"
+      "-for the first two a triple sign(===) will do the job (carefull if you use typeof, because null is a object and undefined is a string)\n- undeclared will find you",
   },
   {
     question: "Whats the difference between == and ===?",
     answer:
-      "- == is used for comparison between two variables irrespective of the datatype of variable\n- === is used for comparision between two variables but this will check strict type, which means it will"
+      "- == is used for comparison between two variables irrespective of the datatype of variable\n- === is used for comparision between two variables but this will check strict type, which means it will",
   },
   {
     question: "Explain how 'this' works in one scenario",
@@ -96,7 +96,7 @@ function foo() {
 - If multiple of the above rules apply, the rule that is higher wins and will set the this value.
 
 - If the function is an ES2015 arrow function, it ignores all the rules above and receives the this value of its surrounding scope at the time it is created.
-`
+`,
   },
   {
     question: "Explain how prototypal inheritance works",
@@ -108,7 +108,7 @@ function foo() {
     console.log(‘woof!’);
   };
   var fido = new Dog();
-  fido.bark(); // ‘woof!’`
+  fido.bark(); // ‘woof!’`,
   },
   {
     question: "What is a closure, and how/why would you use one?",
@@ -123,7 +123,19 @@ function foo() {
   
   var addThree = new add(3);  //addThree(1) => add 3 to 1
   var addFour = new add(4);   //addFour(1) => add 4 to 1
-  `
+
+  function add(x){
+    return function adder(y){
+      if(y == undefined) return x;
+      else{
+        x += y;
+        return adder;
+      }
+    }
+  }
+
+  add(1)(2)(3)() => 6
+  `,
   },
   {
     question:
@@ -164,7 +176,7 @@ function foo() {
     from it, and the advantage of forEach() is that it is more concise than
     the for loop because you don't need a counter variable. With the for-of
     loop, you get both the ability to break from a loop and a more concise
-    syntax.`
+    syntax.`,
   },
   {
     question:
@@ -179,7 +191,7 @@ function foo() {
     • "Maps" each element to a new element by calling the function on each 
     element, creating a new array as a result.
   
-The main difference between .forEach and .map() is that .map() returns a new array.`
+The main difference between .forEach and .map() is that .map() returns a new array.`,
   },
   {
     question: "What's a typical use case for anonymous functions?",
@@ -187,13 +199,13 @@ The main difference between .forEach and .map() is that .map() returns a new arr
 
 - As a callback that is used once and does not need to be used anywhere else. They will seem more self-contained and readable when handlers are defined right inside them, rather than having to search elsewhere to find the function body.
 
-- Arguments to functional programming constructs or Lodash (similar to callbacks).`
+- Arguments to functional programming constructs or Lodash (similar to callbacks).`,
   },
   {
     question: "What's the difference between host objects and native objects?",
     answer: `- Native objects are objects that are part of the JavaScript language defined by the ECMAScript specification, such as String, Math, RegExp, Object, Function, etc.
     
- - Host objects are provided by the runtime environment (browser or Node), such as window, XMLHTTPRequest, etc.`
+ - Host objects are provided by the runtime environment (browser or Node), such as window, XMLHTTPRequest, etc.`,
   },
   {
     question:
@@ -202,71 +214,71 @@ The main difference between .forEach and .map() is that .map() returns a new arr
 
 - var person = Person() invokes the Person as a function, and not as a constructor. Invoking as such is a common mistake if the function is intended to be used as a constructor.
 
-- var person = new Person() creates an instance of the Person object using the new operator, which inherits from Person.prototype. An alternative would be to use Object.create, such as: Object.create(Person.prototype).`
+- var person = new Person() creates an instance of the Person object using the new operator, which inherits from Person.prototype. An alternative would be to use Object.create, such as: Object.create(Person.prototype).`,
   },
   {
     question:
       "Explain the differences on the usage of foo between function foo() {} and var foo = function() {}",
-    answer: `- The first one is a function declaration while the other is a function expression. The key difference is that function declarations have its body hoisted but the bodies of function expressions are not.`
+    answer: `- The first one is a function declaration while the other is a function expression. The key difference is that function declarations have its body hoisted but the bodies of function expressions are not.`,
   },
   {
     question: "What's the difference between .call and .apply?",
-    answer: `- Both .call and .apply are used to invoke functions and the first parameter will be used as the value of this within the function. However, .call takes in comma-separated arguments as the next arguments while .apply takes in an array of arguments as the next argument. An easy way to remember this is C for call and comma-separated and A for apply and an array of arguments.`
+    answer: `- Both .call and .apply are used to invoke functions and the first parameter will be used as the value of this within the function. However, .call takes in comma-separated arguments as the next arguments while .apply takes in an array of arguments as the next argument. An easy way to remember this is C for call and comma-separated and A for apply and an array of arguments.`,
   },
   {
     question: "Explain Function.prototype.bind",
-    answer: `- The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.`
+    answer: `- The bind() method creates a new function that, when called, has its this keyword set to the provided value, with a given sequence of arguments preceding any provided when the new function is called.`,
   },
   {
     question: "Describe event capturing",
-    answer: `Capturing, the event is first captured by the outermost element and propagated to the inner elements.`
+    answer: `Capturing, the event is first captured by the outermost element and propagated to the inner elements.`,
   },
   {
     question: "What's the difference between an attribute and a property?",
     answer: `- Attributes are defined on the HTML markup but properties are defined on the DOM.
 
-  - So if you want to know what's currently inside the text-box, read the property. If you, however, want to know what the initial value of the text-box was, read the attribute.`
+  - So if you want to know what's currently inside the text-box, read the property. If you, however, want to know what the initial value of the text-box was, read the attribute.`,
   },
   {
     question: "Why is extending built-in JavaScript objects not a good idea?",
     answer: `- i.e. because two methods trying to overwrite each other and if the behaviors are not the same, so it breaks
     
-- The only time you may want to extend a native object is when you want to create a polyfill, essentially providing your own implementation for a method that is part of the JavaScript specification but might not exist in the user's browser due to it being an older browser.`
+- The only time you may want to extend a native object is when you want to create a polyfill, essentially providing your own implementation for a method that is part of the JavaScript specification but might not exist in the user's browser due to it being an older browser.`,
   },
   {
     question: "Explain the same-origin policy with regards to JavaScript.",
-    answer: `- The same-origin policy prevents JavaScript from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port number. This policy prevents a malicious script on one page from obtaining access to sensitive data on another web page through that page's Document Object Model.`
+    answer: `- The same-origin policy prevents JavaScript from making requests across domain boundaries. An origin is defined as a combination of URI scheme, hostname, and port number. This policy prevents a malicious script on one page from obtaining access to sensitive data on another web page through that page's Document Object Model.`,
   },
   {
     question: "What tools and techniques do you use for debugging JavaScript?",
     answer: `- ChromeDevTools
 
-- Good old console.log debugging`
+- Good old console.log debugging`,
   },
   {
     question:
       "Explain the difference between synchronous and asynchronous functions",
     answer: `- Synchronous functions are blocking while asynchronous functions are not. In synchronous functions, statements complete before the next statement is run.
     
- - Asynchronous functions usually accept a callback as a parameter and execution continue on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty.`
+ - Asynchronous functions usually accept a callback as a parameter and execution continue on the next line immediately after the asynchronous function is invoked. The callback is only invoked when the asynchronous operation is complete and the call stack is empty.`,
   },
   {
     question:
       "What is event loop? What is the difference between call stack and task queue?",
     answer:
-      "The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue. If the call stack is empty and there are callback functions in the task queue, a function is dequeued and pushed onto the call stack to be executed."
+      "The event loop is a single-threaded loop that monitors the call stack and checks if there is any work to be done in the task queue. If the call stack is empty and there are callback functions in the task queue, a function is dequeued and pushed onto the call stack to be executed.",
   },
   {
     question:
       "What are the differences between variables created using let, var or const?",
     answer:
-      "- Variables declared using the var keyword are scoped to the function in which they are created, or if created outside of any function, to the global object. let and const are block scoped, meaning they are only accessible within the nearest set of curly braces (function, if-else block, or for-loop)."
+      "- Variables declared using the var keyword are scoped to the function in which they are created, or if created outside of any function, to the global object. let and const are block scoped, meaning they are only accessible within the nearest set of curly braces (function, if-else block, or for-loop).",
   },
   {
     question:
       "Can you offer a use case for the new arrow => function syntax? How does this new syntax differ from other functions?",
     answer:
-      "- One obvious benefit of arrow functions is to simplify the syntax needed to create functions, without a need for the function keyword. The this within arrow functions is also bound to the enclosing scope which is different compared to regular functions where the this is determined by the object calling it. Lexically-scoped this is useful when invoking callbacks especially in React components."
+      "- One obvious benefit of arrow functions is to simplify the syntax needed to create functions, without a need for the function keyword. The this within arrow functions is also bound to the enclosing scope which is different compared to regular functions where the this is determined by the object calling it. Lexically-scoped this is useful when invoking callbacks especially in React components.",
   },
   {
     question:
@@ -299,7 +311,7 @@ var sayNameFromWindow1 = john.sayName1;
 sayNameFromWindow1(); // undefined (because 'this' is now the window object)
 
 var sayNameFromWindow2 = john.sayName2;
-sayNameFromWindow2(); // John`
+sayNameFromWindow2(); // John`,
   },
   {
     question:
@@ -331,7 +343,7 @@ sayNameFromWindow2(); // John`
   const { p, q } = o;
 
   console.log(p); // 42
-  console.log(q); // true`
+  console.log(q); // true`,
   },
   {
     question:
@@ -362,7 +374,7 @@ sayNameFromWindow2(); // John`
       "${person.age}" +
       ` /p
 
-      /div `
+      /div `,
   },
   {
     question:
@@ -397,7 +409,7 @@ sayNameFromWindow2(); // John`
   
   //first function add(1)(2)(3).valueOf();
   //second function add(1)(2)(3)();
-    `
+    `,
   },
   {
     question: "Why you might want to create static class members?",
@@ -414,7 +426,7 @@ if ( typeof countMyself.counter == 'undefined' ) {
 
 // Do something stupid to indicate the value
 alert(++countMyself.counter);
-}`
+}`,
   },
   {
     question:
@@ -451,8 +463,8 @@ alert(++countMyself.counter);
             g: 3,
             h: 4,
           }; // e: 1, f: 2, others: { g: 3, h: 4 }
-    `
-  }
+    `,
+  },
 ];
 
 export default JavaScriptQuestions;
