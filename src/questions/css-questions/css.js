@@ -15,20 +15,20 @@ Start at 0, add 1000 for style attribute, add 100 for each ID, add 10 for each a
 B: #content h1
 C: <div id="content"><h1 style="color: #ffffff">Heading</h1></div>
 
-Since 1 < 101 < 1000, the third rule (C) has a greater level of specificity, and therefore will be applied.`
+Since 1 < 101 < 1000, the third rule (C) has a greater level of specificity, and therefore will be applied.`,
   },
   {
     question:
       "What's the difference between 'resetting' and 'normalizing' CSS? Which would you choose, and why?",
     answer: `Resetting - Resetting is meant to strip all default browser styling on elements. For e.g. margins, paddings, font-sizes of all elements are reset to be the same. You will have to redeclare styling for common typographic elements.
     
-Normalizing - Normalizing preserves useful default styles rather than "unstyling" everything. It also corrects bugs for common browser dependencies.`
+Normalizing - Normalizing preserves useful default styles rather than "unstyling" everything. It also corrects bugs for common browser dependencies.`,
   },
   {
     question: "Describe Floats and how they work.",
     answer: `- Float is a CSS positioning property. Floated elements remain a part of the flow of the page, and will affect the positioning of other elements (e.g. text will flow around floated elements), unlike position: absolute elements, which are removed from the flow of the page.
 
- - The CSS clear property can be used to be positioned below left/right/both floated elements.`
+ - The CSS clear property can be used to be positioned below left/right/both floated elements.`,
   },
   {
     question: "Describe z-index and how stacking context is formed.",
@@ -36,12 +36,12 @@ Normalizing - Normalizing preserves useful default styles rather than "unstyling
 
 - Without any z-index value, elements stack in the order that they appear in the DOM (the lowest one down at the same hierarchy level appears on top). Elements with non-static positioning (and their children) will always appear on top of elements with default static positioning, regardless of HTML hierarchy.
 
-- A stacking context is an element that contains a set of layers. Within a local stacking context, the z-index values of its children are set relative to that element rather than to the document root. Layers outside of that context — i.e. sibling elements of a local stacking context — can't sit between layers within it. If an element B sits on top of element A, a child element of element A, element C, can never be higher than element B even if element C has a higher z-index than element B.`
+- A stacking context is an element that contains a set of layers. Within a local stacking context, the z-index values of its children are set relative to that element rather than to the document root. Layers outside of that context — i.e. sibling elements of a local stacking context — can't sit between layers within it. If an element B sits on top of element A, a child element of element A, element C, can never be higher than element B even if element C has a higher z-index than element B.`,
   },
   {
     question: "Describe BFC (Block Formatting Context) and how it works.",
     answer:
-      "- A Block Formatting Context (BFC) is part of the visual CSS rendering of a web page in which block boxes are laid out. Floats, absolutely positioned elements, inline-blocks, table-cells, table-captions, and elements with overflow other than visible (except when that value has been propagated to the viewport) establish new block formatting contexts."
+      "- A Block Formatting Context (BFC) is part of the visual CSS rendering of a web page in which block boxes are laid out. Floats, absolutely positioned elements, inline-blocks, table-cells, table-captions, and elements with overflow other than visible (except when that value has been propagated to the viewport) establish new block formatting contexts.",
   },
   {
     question: "How would you approach fixing browser-specific styling issues?",
@@ -53,7 +53,7 @@ Normalizing - Normalizing preserves useful default styles rather than "unstyling
 
     - Use Reset CSS or Normalize.css.
 
-    - If you're using Postcss (or a similar transpiling library), there may be plugins which allow you to opt in for using modern CSS syntax (and even W3C proposals) that will transform those sections of your code into corresponding safe code that will work in the targets you've used.`
+    - If you're using Postcss (or a similar transpiling library), there may be plugins which allow you to opt in for using modern CSS syntax (and even W3C proposals) that will transform those sections of your code into corresponding safe code that will work in the targets you've used.`,
   },
   {
     question:
@@ -68,7 +68,7 @@ Normalizing - Normalizing preserves useful default styles rather than "unstyling
 
 - Feature detection using Modernizr.
 
-- Use CSS Feature queries`
+- Use CSS Feature queries`,
   },
   {
     question:
@@ -83,7 +83,7 @@ Normalizing - Normalizing preserves useful default styles rather than "unstyling
 
 - Metadata. For example by using Schema.org, RDF, and JSON-LD.
 
-- WAI-ARIA. A W3C technical specification that specifies how to increase the accessibility of web pages.`
+- WAI-ARIA. A W3C technical specification that specifies how to increase the accessibility of web pages.`,
   },
   {
     question:
@@ -93,7 +93,7 @@ Normalizing - Normalizing preserves useful default styles rather than "unstyling
 - print - for printers
 
 - speech - for screenreaders that "reads" the page out loud
-`
+`,
   },
   {
     question:
@@ -114,7 +114,7 @@ Normalizing - Normalizing preserves useful default styles rather than "unstyling
 Disadvantages:
 - Requires tools for preprocessing. Re-compilation time can be slow.
 
-- Not writing currently and potentially usable CSS. For example, by using something like postcss-loader with webpack, you can write potentially future-compatible CSS, allowing you to use things like CSS variables instead of Sass variables. Thus, you're learning new skills that could pay off if/when they become standardized.`
+- Not writing currently and potentially usable CSS. For example, by using something like postcss-loader with webpack, you can write potentially future-compatible CSS, allowing you to use things like CSS variables instead of Sass variables. Thus, you're learning new skills that could pay off if/when they become standardized.`,
   },
   {
     question:
@@ -130,12 +130,12 @@ Disadvantages:
   [font-stretch: <font-stretch>;]?
   [font-weight: <weight>];
   [font-style: <style>];
-}`
+}`,
   },
   {
     question: "Describe pseudo-elements and explain what they are used for.",
     answer:
-      "- A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s). They can be used for decoration (:first-line, :first-letter) or adding elements to the markup (combined with content: ...) without having to modify the markup (:before, :after)"
+      "- A CSS pseudo-element is a keyword added to a selector that lets you style a specific part of the selected element(s). They can be used for decoration (:first-line, :first-letter) or adding elements to the markup (combined with content: ...) without having to modify the markup (:before, :after)",
   },
   {
     question:
@@ -168,7 +168,7 @@ The box model has the following rules:
      width.
 
   - By default, paddings and borders are not part of the
-    width and height of an element.`
+    width and height of an element.`,
   },
   {
     question:
@@ -181,12 +181,12 @@ The box model has the following rules:
 
 - The width of an element is now calculated by the content's width + horizontal padding + horizontal border width.
 
-- Taking into account paddings and borders as part of our box model resonates better with how designers actually imagine content in grids.`
+- Taking into account paddings and borders as part of our box model resonates better with how designers actually imagine content in grids.`,
   },
   {
     question: `What's the difference between the "nth-of-type()" and "nth-child()" selectors?`,
     answer:
-      "- nth-child will only look through child nodes. That is, any node that is inside of your selector. nth-of-type goes through the whole DOM and looks for anything that matches your selector."
+      "- nth-child will only look through child nodes. That is, any node that is inside of your selector. nth-of-type goes through the whole DOM and looks for anything that matches your selector.",
   },
   {
     question:
@@ -201,15 +201,24 @@ The box model has the following rules:
 
 - fixed - The element is removed from the flow of the page and positioned at a specified position relative to the viewport and doesn't move when scrolled.
 
-- sticky - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.`
+- sticky - Sticky positioning is a hybrid of relative and fixed positioning. The element is treated as relative positioned until it crosses a specified threshold, at which point it is treated as fixed positioned.`,
   },
   {
     question:
       "Is there any reason you'd want to use translate() instead of absolute positioning, or vice-versa? And why?",
     answer: `- translate() is a value of CSS transform. Changing transform or opacity does not trigger browser reflow or repaint but does trigger compositions; whereas changing the absolute positioning triggers reflow. transform causes the browser to create a GPU layer for the element but changing absolute positioning properties uses the CPU. Hence translate() is more efficient and will result in shorter paint times for smoother animations.
 
-- When using translate(), the element still occupies its original space (sort of like position: relative), unlike in changing the absolute positioning.`
-  }
+- When using translate(), the element still occupies its original space (sort of like position: relative), unlike in changing the absolute positioning.`,
+  },
+  {
+    question: "What are CSS Sprites?",
+    answer:
+      "CSS Sprites are a means of combining multiple images into a single image file for use on a website, to help with performance.",
+  },
+  {
+    question: "What is Ajax?",
+    answer: "Async data transfer to a server without interrupting the ux",
+  },
 ];
 
 export default CSSQuestions;
