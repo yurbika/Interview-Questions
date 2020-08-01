@@ -44,7 +44,7 @@ An application for improving the knowledge about React
 
 </br>
 
-<p>This just little learing app for myself. Feel free to use it for yourself to!</p>
+<p>This is a learing app for myself. Feel free to use it for yourself too!</p>
 
 ## <div name="source"> 🔍 Source </div>
 
