@@ -93,6 +93,29 @@ const HTMLQuestions = [
     answer:
       "- HTML and XHTML are both markup languages in which web pages are written. The main difference between the two is that HTML syntax is SGML(Standard Generalized Markup Language) based while XHTML syntax is XML(Extensible Markup Language) based",
   },
+  {
+    question: "What does the keygen element do?",
+    answer:
+      "The purpose of <keygen> element is to provide a secure way to authenticate users.",
+  },
+  {
+    question: "What does the bdo element do?",
+    answer:
+      "Overrides the current directionality of text, so that the text within is rendered in a different direction.",
+  },
+  {
+    question: "In what situation should you use the <small> tag?",
+    answer: "When you want to add copyright information inside a <footer>",
+  },
+  {
+    question: "What does the scoped attribute do?",
+    answer: "Applies style rules to all children of the scoped parent element.",
+  },
+  {
+    question:
+      "Does main1.css have to be downloaded and parsed before main2.css can be fetched?",
+    answer: "No",
+  },
 ];
 
 export default HTMLQuestions;
