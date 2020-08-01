@@ -50,5 +50,5 @@ An application for improving the knowledge about React
 
 <a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions">https://github.com/h5bp/Front-end-Developer-Interview-Questions</a></br>
 <a href="https://github.com/sudheerj/reactjs-interview-questions#table-of-contents">https://github.com/sudheerj/
-reactjs-interview-questions#table-of-contents</a>
+reactjs-interview-questions#table-of-contents</a></br>
 <a href="https://frontendmasters.com/books/front-end-handbook/2018/practice/interview-q.html">https://frontendmasters.com/books/front-end-handbook/2018/practice/interview-q.html</a>
