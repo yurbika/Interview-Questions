@@ -91,7 +91,7 @@ const HTMLQuestions = [
   {
     question: "What is the difference between XHTML and HTML?",
     answer:
-      "- HTML and XHTML are both markup languages in which web pages are written. The main difference between the two is that HTML syntax is SGML(Standard Generalized Markup Language) based while XHTML syntax is XML(Extensible Markup Language) based.",
+      "- HTML and XHTML are both markup languages in which web pages are written. The main difference between the two is that HTML syntax is SGML(Standard Generalized Markup Language) based while XHTML syntax is XML(Extensible Markup Language) based",
   },
 ];
 
