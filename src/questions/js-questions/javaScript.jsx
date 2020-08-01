@@ -135,7 +135,7 @@ function foo() {
   }
 
   add(1)(2)(3)() => 6
-  
+
   `,
   },
   {
@@ -464,6 +464,90 @@ alert(++countMyself.counter);
             g: 3,
             h: 4,
           }; // e: 1, f: 2, others: { g: 3, h: 4 }
+    `,
+  },
+  {
+    question:
+      "Can you name two programming paradigms important for JavaScript app developers?",
+    answer:
+      "JavaScript is a multi-paradigm language, supporting imperative/procedural programming along with OOP (Object-Oriented Programming) and functional programming. JavaScript supports OOP with prototypal inheritance.",
+  },
+  {
+    question: "What is functional programming?",
+    answer: `Functional programming is:
+    - usage of pure functions
+    - avoiding side effects
+    - first-class functions
+    - high-order functions`,
+  },
+  {
+    question:
+      "What is the difference between classical inheritance and prototypal inheritance?",
+    answer: `Class Inheritance:
+    - instances inherit from classes
+    - creates subclass relationships
+    - instantiated via 'new' keyword
+    
+    Prototypal Inheritance:
+    - instances inherit directly from other objects
+    - instantiated via Object.create()`,
+  },
+  {
+    question:
+      "What are the pros and cons of functional programming vs object-oriented programming?",
+    answer: `OOP
+    Pros:
+    - easy to understand the basic concept of objects
+    - uses imperative styles rather than declarative style
+    
+    Cons:
+    - depends on shared state
+    - objects and behaviors are tacked together, which often leads to undesirable behavior
+    - resistant to change
+    
+    FP
+    Pros:
+    - avoiding shared state and side-effects, which eliminates bugs
+    - functions are more simplified and easily recomposed for more generally reusable code
+    - ueses more declarative style
+    
+    Cons:
+    - reusable code often leads to more abstractly specified code and reduces readability
+    - has a steeper learning curve than OOP
+    - 
+    `,
+  },
+  {
+    question: "When is classical inheritance an appropriate choice?",
+    answer:
+      "Almost never, but a single level is acceptable from a frame work base-class such as React.Component",
+  },
+  {
+    question: "When is prototypal inheritance an appropriate choice?",
+    answer: `When you need to compose objects from multiple sources.
+    
+    types of prototypal inheritance:
+    - Delegation (i.e., the prototype chain)
+    - Concatenative (i.e. mixins, 'Object,assign()')
+    - Functional
+    `,
+  },
+  {
+    question:
+      "What does “favor object composition over class inheritance” mean?",
+    answer: `- avoid class hierarchies
+    - make code more flexible    
+    `,
+  },
+  {
+    question:
+      "What are the pros and cons of monolithic vs microservice architectures?",
+    answer: `monolithic: 
+    - one cohesive unit of code whose components are designed to work together, sharing the same memory space and resources
+    
+    microservice: 
+    - app is made up of lots of smaller, independent applications
+    - each of the running their own memory space and scaling independently
     `,
   },
 ];
