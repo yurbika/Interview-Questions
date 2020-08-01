@@ -216,8 +216,20 @@ The box model has the following rules:
       "CSS Sprites are a means of combining multiple images into a single image file for use on a website, to help with performance.",
   },
   {
-    question: "What is Ajax?",
-    answer: "Async data transfer to a server without interrupting the ux",
+    question: "Are CSS property names case-sensitive?",
+    answer: "No",
+  },
+  {
+    question: "The pseudo class :root refers to which HTML element?",
+    answer: "The pseudo class :root always refers to the <html> element.",
+  },
+  {
+    question: "Are unused style resources still downloaded by the browser?",
+    answer: "No",
+  },
+  {
+    question: "What is the use of the only selector?",
+    answer: "Stops older browsers from parsing the remainder of the selector",
   },
 ];
 

@@ -550,6 +550,10 @@ alert(++countMyself.counter);
     - each of the running their own memory space and scaling independently
     `,
   },
+  {
+    question: "What is Ajax?",
+    answer: "Async data transfer to a server without interrupting the ux",
+  },
 ];
 
 export default JavaScriptQuestions;
