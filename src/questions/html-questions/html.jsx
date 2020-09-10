@@ -116,6 +116,77 @@ const HTMLQuestions = [
       "Does main1.css have to be downloaded and parsed before main2.css can be fetched?",
     answer: "No",
   },
+  {
+    question: `What is an iframe and how it works?`,
+    answer: `An iframe is an HTML document which can be embedded inside another HTML page.`,
+  },
+  {
+    question: `Explain meta tags in HTML`,
+    answer: `- meta tags always go inside head tag of the HTML page
+    - meta tags is always passed as name/value pairs
+    - meta tags are not displayed on the page but intended for the browser`,
+  },
+  {
+    question: `What is the difference between span and div?`,
+    answer: `- div is a block element
+    - span is an inline element
+    - span can be placed inside of a div but not vice-versa`,
+  },
+  {
+    question: `What were some of the key goals and motivations for the HTML5 specification?`,
+    answer: `- deliver rich content without additional plugins
+    - provide better semantic support for web page structure
+    - provide a stricter parsing standard to simplify error handling
+    - provide better cross-platform support`,
+  },
+  {
+    question: `Briefly describe the correct usage of the following HTML5 semantic elements: <header>, <article>, <section>, <footer>`,
+    answer: `- header => an element which contains introductory and navigational information about a section
+    - article => a self-contained composition
+    - section => a grouping element
+    - footer => holds information that should appear at the end of a section`,
+  },
+  {
+    question: `What is Character Encoding?`,
+    answer: `To display a HTML page correctly, a web browser must know which character set to use.`,
+  },
+  {
+    question: `What is a self closing tag? `,
+    answer: `In HTML5 it is not strictly necessary to close certain HTML tags.`,
+  },
+  {
+    question: `When is it appropriate to use the small element?`,
+    answer: `For short runs of text like disclaimers, caveats, copyrights and so on.`,
+  },
+  {
+    question: `Explain almost standard, full standard and quirks mode`,
+    answer: `When W3C was introduced not every brwoser could just start using them, because it would break most existing sites.
+    
+    - quirks mode => emulates nonstandard behavior
+    - full standard mode => behavior described is same as described by HTML and CSS
+    - Almost standard mode => small number of quirks implementation`,
+  },
+  {
+    question: `How do you set IE compatibility mode?`,
+    answer: `<meta http-equiv="X-UA-Compatible" content="IE=edge" />`,
+  },
+  {
+    question: `What is the difference between <section> and <div>?`,
+    answer: `- section => groups elements
+    - div => only a container element`,
+  },
+  {
+    question: `Where and why is the 'rel="noopener"' attribute used?`,
+    answer: `Prevents other pages to gain any kind of access of the original page`,
+  },
+  {
+    question: `Can a web page contain multiple <header> elements? What about <footer> elements?`,
+    answer: `- Yes, but it is recommend to use only one of each in each section element`,
+  },
+  {
+    question: `What is the purpose of 'main' element?`,
+    answer: `- According to W3C, main should be used only for content that is unique to that document`,
+  },
 ];
 
 export default HTMLQuestions;
